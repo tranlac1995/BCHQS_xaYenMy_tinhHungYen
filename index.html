@@ -1,0 +1,2434 @@
+﻿
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#063b32">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png?v=2">
+<link rel="apple-touch-icon" href="./icon-192.png?v=2">
+<link rel="manifest" href="./manifest.json">
+<title>Cổng thông tin điện tử - Bộ Chỉ huy Quân sự tỉnh Quảng Ninh</title>
+
+<style>
+:root{
+    --green:#07543b;
+    --green2:#087a50;
+    --blue:#0879b9;
+    --red:#d71920;
+    --gold:#f3c84b;
+    --ink:#15395d;
+    --line:#dce8f2;
+    --shadow:0 4px 14px #15395d22;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background-color:#eaf2f5;
+    background-image:url("./backgruou3.png");
+    background-position:center top;
+   background-size:100% auto;
+background-repeat:no-repeat;
+    background-attachment:scroll;
+
+    font-family:Arial,Helvetica,sans-serif;
+    color:#17324e;
+    font-size:14px;
+    position:relative;
+    isolation:isolate;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    background-image:radial-gradient(#0c7250 .7px,transparent .7px);
+    background-size:25px 25px;
+    opacity:.055;
+}
+
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+
+/* BANNER CHÍNH */
+.site-hero{
+    height:235px;
+    position:relative;
+    overflow:visible;
+    background:url("./banner-quang-ninh1.png") center 42%/cover no-repeat;
+    border:none;
+}
+
+.site-hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    background:transparent;
+    pointer-events:none;
+}
+
+.hero-heading{
+    display:none;
+    position:absolute;
+    z-index:2;
+    left:29%;
+    right:27%;
+    top:82px;
+    text-align:center;
+    color:#fff;
+    text-shadow:0 2px 5px #591000;
+}
+
+.hero-heading strong{
+    display:block;
+    font-size:clamp(21px,3vw,37px);
+    font-weight:900;
+    letter-spacing:.4px;
+    color:#e51c23;
+    text-shadow:0 1px #fff,0 3px 4px #7d160e;
+}
+
+.hero-heading em{
+    display:block;
+    margin-top:5px;
+    font:italic 700 clamp(13px,1.7vw,21px) Georgia,serif;
+    color:#fff;
+    text-shadow:0 2px 4px #721;
+}
+
+/* THANH ĐIỀU HƯỚNG */
+.topnav{
+    opacity:1;
+    position:absolute;
+    right:14px;
+    top:10px;
+    display:flex;
+    gap:4px;
+    align-items:center;
+    z-index:5;
+}
+
+.topnav a{
+    color:#fff;
+    text-decoration:none;
+    background:linear-gradient(#087a4e,#03432e);
+    border:1px solid #c9f4c988;
+    border-radius:18px;
+    padding:8px 11px;
+    font-size:12px;
+    font-weight:800;
+    white-space:nowrap;
+    box-shadow:0 2px 6px #002d3766;
+}
+
+.topnav a:hover{
+    filter:brightness(1.2);
+    background:linear-gradient(#0b9860,#05613f);
+}
+
+.hero-user{
+    display:none;
+    position:static;
+    color:#15365c;
+    background:#ffffffeb;
+    border-radius:18px;
+    padding:6px 11px;
+    font-size:11px;
+    font-weight:700;
+    white-space:nowrap;
+    box-shadow:0 2px 7px #00354b33;
+    flex-shrink:0;
+}
+
+.hero-user a{
+    color:#c51620;
+    text-decoration:none;
+}
+
+.hero-user img{
+    width:19px;
+    height:19px;
+    border-radius:50%;
+    vertical-align:middle;
+    object-fit:cover;
+}
+
+/* 8 NÚT TRÒN */
+.quick-circles{
+    display:grid;
+    grid-template-columns:repeat(9,minmax(0,1fr));
+    gap:7px;
+    max-width:1580px;
+    margin:30px auto 14px;
+    padding:0 22px;
+    position:relative;
+    z-index:10;
+    align-items:start;
+}
+
+.quick-circles:before{display:none}
+
+/* HUY HIỆU SAO VÀNG Ở GIỮA 8 NÚT */
+.hero-emblem{
+    display:grid;
+    grid-column:5;
+    grid-row:1;
+    place-items:center;
+    width:104px;
+    height:104px;
+    margin:-5px auto 0;
+    border-radius:50%;
+    position:relative;
+    background:radial-gradient(circle at 35% 25%,#ff6652 0%,#e51b27 42%,#a90016 78%,#65000b 100%);
+    border:5px solid #ffdf75;
+    outline:3px solid #b77b16;
+    box-shadow:0 5px 16px #001c3c99,0 0 15px #ffd75cbb,inset 0 0 0 3px #fff2a8,inset 0 0 12px #65000099;
+}
+
+.hero-emblem:after{
+    content:"";
+    position:absolute;
+    width:116px;
+    height:116px;
+    border:3px solid #f8d46a;
+    border-radius:50%;
+    box-shadow:0 0 0 2px #fff2b0,0 0 12px #ffc83d;
+    pointer-events:none;
+}
+
+.hero-emblem svg{
+    width:76px;
+    height:76px;
+    display:block;
+    filter:drop-shadow(0 2px 2px #542900) drop-shadow(0 0 5px #ffe77a);
+}
+.circle-link{
+    min-width:0;
+    text-decoration:none;
+    text-align:center;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+    font-weight:800;
+    font-size:12px;
+    line-height:1.2;
+}
+
+.circle-icon{
+    width:88px;
+    height:88px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    font-size:40px;
+    border:3px solid #fff;
+    outline:2px solid #dce8f2;
+    color:#fff;
+    box-shadow:
+        0 8px 18px #17365d55,
+        0 0 12px #ffffff55,
+        inset 0 3px 7px #ffffffaa,
+        inset 0 -6px 10px #00000035;
+    text-shadow:0 2px 3px #00000055,0 0 5px #ffffff55;
+    transition:all .25s ease;
+    position:relative;
+}
+
+.circle-icon:before{
+    content:"";
+    position:absolute;
+    top:7px;
+    left:15%;
+    width:70%;
+    height:30%;
+    border-radius:50%;
+    background:linear-gradient(180deg,#ffffff99,#ffffff00);
+    pointer-events:none;
+}
+
+.circle-link:hover .circle-icon{
+    transform:translateY(-4px) scale(1.04);
+}
+
+.circle-link:nth-of-type(1) .circle-icon{
+    background:linear-gradient(145deg,#ff6474,#d7193f 55%,#8e1235);
+}
+
+.circle-link:nth-of-type(2) .circle-icon{
+    background:linear-gradient(145deg,#42dfaa,#07966d 55%,#045b50);
+}
+
+.circle-link:nth-of-type(3) .circle-icon{
+    background:linear-gradient(145deg,#55baff,#176bd1 55%,#123b91);
+}
+
+.circle-link:nth-of-type(4) .circle-icon{
+    background:linear-gradient(145deg,#ffc56b,#ed8125 55%,#a83d17);
+}
+
+.circle-link:nth-of-type(6) .circle-icon{
+    background:linear-gradient(145deg,#ffdf75 0%,#e9a51c 50%,#a95708 100%);
+    border-color:#fff0b0;
+    box-shadow:0 7px 16px #8a500055,inset 0 3px 6px #ffffff99,inset 0 -5px 9px #75400066;
+}
+
+.circle-link:nth-of-type(7) .circle-icon{
+    background:linear-gradient(145deg,#55e1df,#079da5 55%,#07536d);
+}
+
+.circle-link:nth-of-type(8) .circle-icon{
+    background:linear-gradient(145deg,#8bb8ff,#416fe0 55%,#263b9b);
+}
+
+.circle-link:nth-of-type(9) .circle-icon{
+    background:linear-gradient(145deg,#ffe99a,#dba928 55%,#95600b);
+}
+
+.circle-link{
+    position:relative;
+}
+
+.circle-icon{
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding-top:8px;
+}
+
+.circle-label{
+    position:absolute;
+    top:55px;
+    left:50%;
+    transform:translateX(-50%);
+    width:82px;
+    color:#fff;
+    font-size:10px;
+    font-weight:900;
+    line-height:1.1;
+    text-align:center;
+    text-shadow:0 1px 3px #000,0 0 4px #000;
+    z-index:2;
+    pointer-events:none;
+}
+
+/* NÚT LỜI BÁC HỒ */
+.quick-circles a[href="loibachongayxua.html"] .circle-icon{
+    background:linear-gradient(145deg,#fff1a8 0%,#e8b43d 45%,#a96b12 100%);
+    color:#fff;
+    border:3px solid #fff4c4;
+    outline:2px solid #e8c66b;
+    box-shadow:
+        0 8px 18px #8a5a1d66,
+        0 0 14px #ffd86a88,
+        inset 0 3px 7px #ffffffaa,
+        inset 0 -6px 10px #75400055;
+    text-shadow:0 2px 4px #754000;
+}
+
+/* NỘI DUNG TRANG */
+.page{
+    max-width:1640px;
+    margin:0 auto;
+    padding:0 16px 18px;
+}
+
+.main-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1.35fr) minmax(310px,.95fr) minmax(205px,.62fr);
+    gap:12px;
+}
+
+.panel{
+    background:linear-gradient(145deg,#fff,#f4fbff);
+    border:1px solid #c8e0ef;
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    padding:11px;
+    min-width:0;
+}
+
+.panel-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    margin:-11px -11px 10px;
+    padding:9px 12px;
+    border-radius:13px 13px 7px 7px;
+    background:linear-gradient(90deg,#08794f,#034b39);
+    color:#fff;
+    box-shadow:inset 0 -2px #e6c54e;
+}
+
+.panel:first-child .panel-head{
+    background:linear-gradient(90deg,#ff3038,#c90018 50%,#8e0010);
+    border-bottom:2px solid #ffdf62;
+    box-shadow:
+        inset 0 2px 5px #ffffff55,
+        inset 0 -3px 5px #65000066,
+        0 3px 8px #8b001c66;
+}
+
+.panel-title{
+    font-size:19px;
+    font-weight:900;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#fff8c9;
+    letter-spacing:.5px;
+    text-shadow:0 1px 0 #fff,0 2px 0 #d9a52e,0 3px 2px #8b3000,0 4px 6px #0009;
+}
+
+.more{
+    color:#ffe37a;
+    text-decoration:none;
+    font-weight:800;
+    font-size:11px;
+    white-space:nowrap;
+}
+
+.more:hover{text-decoration:underline}
+
+.news-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+    gap:10px;
+}
+
+.feature-image{
+    height:250px;
+    border-radius:9px;
+    background:linear-gradient(135deg,#153f68,#327eaa) center/cover no-repeat;
+    display:flex;
+    align-items:flex-end;
+    text-decoration:none;
+    color:white;
+    padding:12px;
+    position:relative;
+    overflow:hidden;
+}
+
+.feature-image:after{
+    content:"";
+    position:absolute;
+    inset:25% 0 0;
+    background:linear-gradient(transparent,#00172ee8);
+}
+
+.feature-image span{
+    position:relative;
+    z-index:1;
+    font-size:15px;
+    font-weight:800;
+    line-height:1.35;
+    text-shadow:0 2px 4px #000;
+}
+
+.feature-news h3{
+    font-size:19px;
+    line-height:1.4;
+    margin:7px 0 5px;
+    color:#172d4b;
+}
+
+.feature-news h3 a,.news-item h4 a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.news-list{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.news-item{
+    display:grid;
+    grid-template-columns:90px minmax(0,1fr);
+    gap:8px;
+    align-items:center;
+    padding-bottom:7px;
+    border-bottom:1px solid #e3edf5;
+}
+
+.thumb{
+    height:65px;
+    border-radius:7px;
+    background:linear-gradient(135deg,#287c9e,#0a3f71) center/cover no-repeat;
+    display:block;
+}
+
+.news-item h4{
+    font-size:12px;
+    line-height:1.2;
+    margin:0 0 5px;
+    color:#233b5b;
+}
+
+.meta{
+    font-size:10px;
+    color:#718096;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+/* LỊCH */
+.month-name{
+    text-align:center;
+    font-weight:900;
+    color:#173e5f;
+    margin:3px 0 8px;
+    font-size:16px;
+}
+
+.month-controls{display:flex;gap:5px}
+
+.month-controls button{
+    border:1px solid #d5e6ef;
+    background:#f3fbff;
+    border-radius:6px;
+    padding:3px 8px;
+    color:#246044;
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:4px;
+    text-align:center;
+}
+
+.day-name{
+    background:#0ab77b;
+    padding:7px 2px;
+    border-radius:5px;
+    font-weight:800;
+    color:#fff;
+    font-size:11px;
+}
+
+.day{
+    padding:7px 2px;
+    border-radius:6px;
+    background:#fbfdff;
+    color:#24394c;
+    font-size:12px;
+    border:1px solid #edf1f6;
+    min-height:29px;
+}
+
+.day.muted{color:#aab4c2;background:#f5f7fa}
+.day.today{background:#e51d27;color:#fff;font-weight:900}
+
+.day.event:after{
+    content:"";
+    display:block;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#18a05a;
+    margin:2px auto 0;
+}
+
+.legend{
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap;
+    margin-top:9px;
+    font-size:9px;
+    color:#61718a;
+}
+
+.dot{
+    display:inline-block;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    margin-right:3px;
+}
+
+/* LIÊN KẾT NHANH */
+.quick-list{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.quick-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px;
+    border-radius:28px;
+    text-decoration:none;
+    font-weight:800;
+    font-size:13px;
+    background:linear-gradient(90deg,#e6f3ff,#cfeaff);
+    color:#153f72;
+    border:1px solid #d3e8f5;
+    box-shadow:0 2px 4px #1c527322;
+}
+
+.quick-row:nth-child(2){
+    background:linear-gradient(90deg,#eff9e9,#e2f1d8);
+    color:#245a38;
+}
+
+.quick-row:nth-child(3){
+    background:linear-gradient(90deg,#fff0e7,#ffe1d0);
+    color:#a92716;
+}
+
+.quick-row:nth-child(4){
+    background:linear-gradient(90deg,#f3eaff,#e7dcff);
+    color:#5531a0;
+}
+
+.quick-row span{
+    font-size:27px;
+    min-width:35px;
+    text-align:center;
+}
+
+/* KHU VỰC THƯ VIỆN VÀ KẾT QUẢ */
+.lower-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:20px;
+    margin-top:20px;
+    padding:20px;
+    position:relative;
+    border-radius:18px;
+    border:1px solid #c4dfdf;
+    background:
+        radial-gradient(ellipse at 0% 0%,#d2eee7 0%,transparent 48%),
+        radial-gradient(ellipse at 100% 100%,#dceafa 0%,transparent 48%),
+        linear-gradient(135deg,#f5fbfa,#edf5fc);
+    box-shadow:0 8px 25px #174b5c18,inset 0 1px 0 #fff;
+    align-items:stretch;
+}
+
+
+.lower-grid > .panel{
+    min-width:0;
+    margin:0;
+    padding:14px;
+    border-radius:15px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.78),
+        rgba(220,245,255,.52)
+    );
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.85);
+
+    box-shadow:
+        0 8px 25px rgba(0,35,65,.18),
+        0 0 12px rgba(0,210,255,.12),
+        inset 0 1px 2px rgba(255,255,255,.95),
+        inset 0 0 15px rgba(0,180,255,.07);
+
+    position:relative;
+    transition:transform .3s ease,box-shadow .3s ease;
+}
+
+
+.lower-grid > .panel:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px #173e5d25;
+}
+
+.lower-grid .panel-head{
+    margin:-14px -14px 14px;
+    padding:12px 14px;
+    border-radius:14px 14px 8px 8px;
+    background:linear-gradient(100deg,#087c57,#064c48,#083c59);
+    box-shadow:inset 0 1px 3px #ffffff55,inset 0 -2px #e9ca66,0 3px 8px #063b3240;
+}
+
+/* THƯ VIỆN */
+.library-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;
+}
+
+.lib-item{
+    min-height:112px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:#23435c;
+    border-radius:13px;
+    padding:12px 6px;
+    text-align:center;
+    background:linear-gradient(145deg,#fff,#eaf5fa);
+    border:1px solid #d6e7ef;
+    box-shadow:0 4px 10px #174b5c12,inset 0 1px 0 #fff;
+    transition:all .25s ease;
+}
+
+.lib-item:nth-child(2){background:linear-gradient(145deg,#fff,#e9f0ff)}
+.lib-item:nth-child(3){background:linear-gradient(145deg,#fff,#e3f7ef)}
+.lib-item:nth-child(4){background:linear-gradient(145deg,#fff,#f0eaff)}
+.lib-item:nth-child(5){background:linear-gradient(145deg,#fff,#fff3dc)}
+.lib-item:nth-child(6){background:linear-gradient(145deg,#fff,#e1f5f5)}
+
+.lib-item:hover{
+    transform:translateY(-5px);
+    border-color:#54b99a;
+    box-shadow:0 9px 18px #087a5040;
+}
+
+.lib-icon{
+    font-size:32px;
+    margin-bottom:9px;
+    filter:drop-shadow(0 3px 3px #17365d25);
+}
+
+.lib-item strong{
+    display:block;
+    font-size:11px;
+    line-height:1.45;
+    color:#23435c;
+}
+
+/* BIỂU ĐỒ */
+#homeResultChart{
+    height:190px;
+    display:flex;
+    align-items:stretch;
+    justify-content:space-around;
+    gap:12px;
+    padding:15px 8px 0;
+    border-bottom:1px solid #dce8ed;
+    border-radius:8px;
+    background:repeating-linear-gradient(to bottom,transparent 0 37px,#e8f0f3 38px);
+}
+
+#homeResultChart .bar-wrap{
+    flex:1;
+    min-width:0;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+    gap:6px;
+}
+
+#homeResultChart .bar-value{
+    font-size:12px;
+    font-weight:900;
+    color:#173e5f;
+}
+
+#homeResultChart .bar{
+    width:min(42px,70%);
+    min-height:0;
+    border-radius:7px 7px 0 0;
+    box-shadow:inset 0 2px 4px #ffffff66,0 2px 5px #17365d22;
+}
+
+#homeResultChart .bar-label{
+    font-size:10px;
+    font-weight:800;
+    color:#435c70;
+    text-align:center;
+    line-height:1.4;
+    min-height:28px;
+}
+
+/* CHÂN TRANG */
+.footer{
+    margin-top:12px;
+    min-height:90px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:12px;
+    color:#ffe58b;
+    font-weight:900;
+    font-size:19px;
+    letter-spacing:.3px;
+    background:#07523b url("./banner-chan-trang-quang-ninh.png") center/cover no-repeat;
+    border:3px solid #e7c34d;
+    border-radius:11px;
+    text-shadow:0 2px 5px #003b25;
+}
+
+.footer span{
+    font-size:13px;
+    font-weight:700;
+}
+
+/* NÚT NHẠC */
+.music-control{
+    position:fixed;
+    bottom:16px;
+    right:16px;
+    z-index:20;
+    background:#ffffffed;
+    padding:9px 14px;
+    border-radius:24px;
+    box-shadow:0 4px 12px #0003;
+    cursor:pointer;
+    border:1px solid #d6ad54;
+    font-size:13px;
+    font-weight:bold;
+    color:#1e3c72;
+}
+
+/* RESPONSIVE */
+@media(max-width:1150px){
+    .main-grid{grid-template-columns:1fr 1fr}
+    .main-grid>.panel:first-child{grid-column:1/-1}
+    .lower-grid{grid-template-columns:1fr 1fr;gap:14px}
+}
+
+@media(max-width:700px){
+    body{
+        background-attachment:scroll;
+    }
+
+    .site-hero{
+        height:190px;
+        background-size:auto 100%;
+        background-position:35% center;
+    }
+
+    .hero-heading{left:17%;right:3%;top:76px}
+    .hero-heading strong{font-size:17px}
+    .hero-heading em{font-size:11px}
+
+    .topnav{
+        opacity:1;
+        left:5px;
+        right:5px;
+        top:5px;
+        justify-content:center;
+        gap:3px;
+        flex-wrap:wrap;
+    }
+
+    .topnav a{
+        font-size:9px;
+        padding:5px 7px;
+        color:#fff;
+        background:linear-gradient(#087a4e,#03432e);
+    }
+
+    .hero-user{
+        top:auto;
+        bottom:5px;
+        right:7px;
+        font-size:9px;
+    }
+
+    .quick-circles{
+        grid-template-columns:repeat(4,minmax(0,1fr));
+        gap:12px 5px;
+        margin:8px auto 14px;
+        padding:0 8px;
+    }
+
+    .quick-circles:before{display:none}
+
+    .hero-emblem{
+        grid-column:1/-1;
+        grid-row:1;
+        width:60px;
+        height:60px;
+        font-size:33px;
+        margin:0 auto 3px;
+    }
+
+    .hero-emblem:after{
+    width:70px;
+    height:70px;
+    border-width:2px;
+}
+
+    .hero-emblem svg{
+        width:44px;
+        height:44px;
+    }
+
+    .circle-label{
+        color:#173b5c;
+        text-shadow:0 1px #fff;
+    }
+
+    .circle-icon{
+        width:58px;
+        height:58px;
+        font-size:23px;
+        border-width:3px;
+    }
+
+    .circle-link{font-size:10px}
+
+    .page{padding:0 8px 15px}
+
+    .main-grid,.lower-grid{grid-template-columns:1fr}
+    .main-grid>.panel:first-child{grid-column:auto}
+
+    .news-layout{grid-template-columns:1fr}
+    .feature-image{height:190px}
+
+    .news-list{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .news-item{
+        grid-template-columns:62px minmax(0,1fr);
+        gap:6px;
+    }
+
+    .thumb{height:54px}
+    .news-item h4{font-size:10px}
+
+    .panel{padding:10px}
+    .panel-head{margin:-10px -10px 9px}
+    .panel-title{font-size:13px}
+
+    .library-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:8px;
+    }
+
+    .lower-grid{
+        gap:14px;
+        padding:10px;
+        margin-top:14px;
+        border-radius:13px;
+    }
+
+    .lower-grid>.panel{padding:11px}
+
+    .lower-grid .panel-head{
+        margin:-11px -11px 12px;
+    }
+
+    .lib-item{
+        min-height:100px;
+        padding:9px 4px;
+    }
+
+    .lib-icon{font-size:27px}
+    .lib-item strong{font-size:10px}
+
+    #homeResultChart{height:165px}
+
+    .stats-inline{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .footer{font-size:14px;min-height:80px}
+    .footer span{font-size:10px}
+}
+
+@media(max-width:390px){
+    .news-list{grid-template-columns:1fr}
+    .calendar-grid{gap:2px}
+    .day{padding:6px 1px}
+}
+/* ==========================================
+   GLASSMORPHISM + NEON GLOW 3D
+   GIAO DIỆN TRUNG TÂM ĐIỀU HÀNH QUÂN SỰ
+========================================== */
+
+/* 1. CÁC BẢNG KÍNH CHÍNH */
+.main-grid > .panel,
+.lower-grid > .panel,
+.page > .panel {
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.78),
+        rgba(220,245,255,.52)
+    );
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.85);
+
+    box-shadow:
+        0 8px 25px rgba(0,35,65,.18),
+        0 0 12px rgba(0,210,255,.12),
+        inset 0 1px 2px rgba(255,255,255,.95),
+        inset 0 0 15px rgba(0,180,255,.07);
+
+    position:relative;
+}
+
+/* 2. VIỀN KÍNH PHÁT SÁNG */
+.main-grid > .panel:before,
+.lower-grid > .panel:before,
+.page > .panel:before {
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    padding:1px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.95),
+        rgba(0,220,255,.55),
+        rgba(0,130,100,.25),
+        rgba(255,255,255,.8)
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+
+    pointer-events:none;
+    z-index:2;
+}
+
+/* 3. HIỆU ỨNG NỔI 3D KHI DI CHUỘT */
+.main-grid > .panel,
+.lower-grid > .panel {
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.main-grid > .panel:hover,
+.lower-grid > .panel:hover {
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0,45,75,.22),
+        0 0 18px rgba(0,210,255,.3),
+        inset 0 1px 3px #ffffff;
+}
+
+/* 4. THANH ĐIỀU HƯỚNG KÍNH NEON */
+.topnav a {
+    background:linear-gradient(
+        135deg,
+        rgba(0,110,85,.88),
+        rgba(0,55,75,.88)
+    );
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(100,255,220,.65);
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.2),
+        0 0 8px rgba(0,255,200,.2),
+        inset 0 1px 2px rgba(255,255,255,.4);
+
+    transition:all .25s ease;
+}
+
+.topnav a:hover {
+    box-shadow:
+        0 0 12px rgba(0,255,200,.65),
+        0 0 25px rgba(0,200,255,.35),
+        inset 0 1px 4px #ffffff88;
+
+    transform:translateY(-2px);
+}
+
+/* 5. CÁC NÚT THƯ VIỆN KÍNH 3D */
+.lib-item {
+    background:rgba(255,255,255,.58);
+
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 5px 15px rgba(0,55,90,.12),
+        0 0 8px rgba(0,200,255,.12),
+        inset 0 1px 3px #ffffff;
+}
+
+.lib-item:hover {
+    box-shadow:
+        0 8px 22px rgba(0,100,120,.22),
+        0 0 16px rgba(0,220,255,.4);
+}
+
+/* 6. CÁC NÚT LIÊN KẾT NHANH */
+.quick-row {
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.85);
+
+    box-shadow:
+        0 5px 15px rgba(0,40,80,.13),
+        inset 0 1px 3px #ffffff;
+}
+
+.quick-row:hover {
+    transform:translateX(4px);
+
+    box-shadow:
+        0 5px 18px rgba(0,160,200,.25),
+        0 0 12px rgba(0,210,255,.2);
+}
+
+/* 7. NÚT ĐIỀU KHIỂN NHẠC */
+.music-control {
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,215,100,.9);
+
+    box-shadow:
+        0 5px 18px rgba(0,30,60,.2),
+        0 0 12px rgba(255,200,60,.25),
+        inset 0 1px 3px #ffffff;
+}
+
+/* 8. GIỮ TƯƠNG THÍCH VỚI ĐIỆN THOẠI */
+@media(max-width:700px) {
+    .main-grid > .panel,
+    .lower-grid > .panel,
+    .page > .panel {
+        backdrop-filter:blur(8px);
+        -webkit-backdrop-filter:blur(8px);
+    }
+}
+@media(max-width:700px){
+    .circle-icon{
+        padding-top:5px;
+    }
+
+    .circle-label{
+        top:36px;
+        width:56px;
+        font-size:8px;
+        line-height:1.05;
+    }
+}
+/* =========================================
+   NÂNG CẤP 8 NÚT TRÒN - PHA LÊ 3D
+========================================= */
+
+.quick-circles .circle-link{
+    position:relative;
+    isolation:isolate;
+}
+
+/* HÌNH TRÒN */
+.quick-circles .circle-icon{
+    width:98px;
+    height:98px;
+    flex-shrink:0;
+    position:relative;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding-top:10px;
+    overflow:hidden;
+
+    border:3px solid #fff;
+    outline:2px solid #ffe9a6;
+    border-radius:50%;
+
+    color:#fff;
+    font-size:38px;
+
+    box-shadow:
+        0 9px 20px #082b4b66,
+        0 0 10px #ffffffcc,
+        0 0 20px #ffe99b99,
+        inset 0 3px 8px #ffffffdd,
+        inset 0 -8px 13px #001c3c55;
+
+    text-shadow:
+        0 2px 3px #00152b99,
+        0 0 8px #ffffffaa;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        filter .3s ease;
+}
+
+/* ÁNH SÁNG TRÊN MẶT NÚT */
+.quick-circles .circle-icon:before{
+    content:"";
+    position:absolute;
+    top:5px;
+    left:13%;
+    width:74%;
+    height:38%;
+    border-radius:50%;
+    background:linear-gradient(
+        180deg,
+        #ffffffdd 0%,
+        #ffffff66 38%,
+        #ffffff00 100%
+    );
+    filter:blur(1px);
+    pointer-events:none;
+    z-index:1;
+}
+
+/* VÒNG SÁNG BÊN TRONG */
+.quick-circles .circle-icon:after{
+    content:"";
+    position:absolute;
+    inset:5px;
+    border:1px solid #ffffff99;
+    border-radius:50%;
+    box-shadow:inset 0 0 9px #ffffff66;
+    pointer-events:none;
+    z-index:1;
+}
+
+/* MÀU ĐỎ RUBY */
+.quick-circles a:nth-of-type(1) .circle-icon{
+    background:radial-gradient(
+        circle at 35% 22%,
+        #ffb6bc 0%,
+        #ff5368 28%,
+        #e50938 65%,
+        #810b35 100%
+    );
+    box-shadow:
+        0 9px 20px #a9003566,
+        0 0 19px #ff547a99,
+        inset 0 3px 8px #ffffffdd,
+        inset 0 -8px 13px #65001f88;
+}
+
+/* MÀU XANH NGỌC LỤC BẢO */
+.quick-circles a:nth-of-type(2) .circle-icon{
+    background:radial-gradient(
+        circle at 35% 22%,
+        #c4ffe9 0%,
+        #48e9b0 28%,
+        #00a875 65%,
+        #00543f 100%
+    );
+    box-shadow:
+        0 9px 20px #005b4266,
+        0 0 19px #43ffbd99,
+        inset 0 3px 8px #ffffffdd,
+        inset 0 -8px 13px #003b3288;
+}
+
+/* MÀU XANH SAPPHIRE */
+.quick-circles a:nth-of-type(3) .circle-icon{
+    background:radial-gradient(
+        circle at 35% 22%,
+        #c3edff 0%,
+        #55baff 28%,
+        #0878df 65%,
+        #123b83 100%
+    );
+    box-shadow:
+        0 9px 20px #003c9566,
+        0 0 19px #42baff99,
+        inset 0 3px 8px #ffffffdd,
+        inset 0 -8px 13px #06275f88;
+}
+
+/* MÀU CAM HỔ PHÁCH */
+.quick-circles a:nth-of-type(4) .circle-icon{
+    background:radial-gradient(
+        circle at 35% 22%,
+        #fff0b8 0%,
+        #ffc15b 28%,
+        #f07816 65%,
+        #96320c 100%
+    );
+    box-shadow:
+        0 9px 20px #9d410066,
+        0 0 19px #ffb347aa,
+        inset 0 3px 8px #ffffffdd,
+        inset 0 -8px 13px #70230088;
+}
+
+/* MÀU VÀNG KIM - LỜI BÁC HỒ */
+.quick-circles a:nth-of-type(6) .circle-icon{
+    background:radial-gradient(
+        circle at 35% 22%,
+        #fffbd0 0%,
+        #ffe36b 28%,
+        #e8a900 65%,
+        #915000 100%
+    );
+    border-color:#fff8d6;
+    outline-color:#ffdc65;
+    box-shadow:
+        0 9px 20px #86500077,
+        0 0 22px #ffdf68bb,
+        inset 0 3px 8px #ffffffee,
+        inset 0 -8px 13px #70400088;
+}
+
+/* MÀU TÍM AMETHYST */
+.quick-circles a:nth-of-type(7) .circle-icon{
+    background:radial-gradient(
+        circle at 35% 22%,
+        #f1d5ff 0%,
+        #c17bff 28%,
+        #8134d8 65%,
+        #42136f 100%
+    );
+    box-shadow:
+        0 9px 20px #4c167966,
+        0 0 19px #c17bffbb,
+        inset 0 3px 8px #ffffffdd,
+        inset 0 -8px 13px #2d0b5488;
+}
+
+/* MÀU XANH NGỌC LAM */
+.quick-circles a:nth-of-type(8) .circle-icon{
+    background:radial-gradient(
+        circle at 35% 22%,
+        #c9ffff 0%,
+        #53e5e9 28%,
+        #079caf 65%,
+        #064d70 100%
+    );
+    box-shadow:
+        0 9px 20px #005b7966,
+        0 0 19px #4cfaff99,
+        inset 0 3px 8px #ffffffdd,
+        inset 0 -8px 13px #003a5888;
+}
+
+/* MÀU XANH COBALT */
+.quick-circles a:nth-of-type(9) .circle-icon{
+    background:radial-gradient(
+        circle at 35% 22%,
+        #d5eaff 0%,
+        #78baff 28%,
+        #386fe0 65%,
+        #172e83 100%
+    );
+    box-shadow:
+        0 9px 20px #142d8266,
+        0 0 19px #6bb5ffbb,
+        inset 0 3px 8px #ffffffdd,
+        inset 0 -8px 13px #10205e88;
+}
+
+/* CHỮ NẰM BÊN TRONG HÌNH TRÒN */
+.quick-circles .circle-label{
+    position:absolute;
+    top:62px;
+    left:50%;
+    transform:translateX(-50%);
+    width:91px;
+    color:#fff;
+    font-size:11px;
+    font-weight:900;
+    line-height:1.12;
+    text-align:center;
+    text-shadow:
+        0 1px 2px #00152b,
+        0 2px 4px #00152b,
+        0 0 5px #00152b;
+    z-index:3;
+    pointer-events:none;
+}
+
+/* HIỆU ỨNG KHI RÊ CHUỘT */
+.quick-circles .circle-link:hover .circle-icon{
+    transform:translateY(-5px) scale(1.07);
+    filter:brightness(1.15) saturate(1.15);
+    box-shadow:
+        0 13px 25px #002c4b77,
+        0 0 24px #fff3bbaa,
+        inset 0 3px 10px #ffffffee,
+        inset 0 -8px 13px #001c3c55;
+}
+
+/* ĐIỆN THOẠI */
+@media(max-width:700px){
+
+    .quick-circles .circle-icon{
+        width:66px;
+        height:66px;
+        font-size:27px;
+        padding-top:6px;
+    }
+
+    .quick-circles .circle-label{
+        top:41px;
+        width:61px;
+        font-size:8px;
+        line-height:1.05;
+    }
+
+    .quick-circles .circle-link:hover .circle-icon{
+        transform:none;
+    }
+}
+/* ===== TĂNG ĐỘ ĐẬM MÀU 8 VÒNG TRÒN ===== */
+
+.quick-circles .circle-icon{
+    filter:saturate(1.65) brightness(.88) contrast(1.18) !important;
+    border:3px solid #ffffff !important;
+    outline:2px solid #e4bd58 !important;
+}
+
+/* ĐỎ ĐẬM */
+.quick-circles a:nth-of-type(1) .circle-icon{
+    background:radial-gradient(circle at 35% 20%,
+    #ed343f 0%,#c90025 38%,#850019 75%,#39000e 100%) !important;
+}
+
+/* XANH LÁ ĐẬM */
+.quick-circles a:nth-of-type(2) .circle-icon{
+    background:radial-gradient(circle at 35% 20%,
+    #19c879 0%,#008447 38%,#00552f 75%,#002719 100%) !important;
+}
+
+/* XANH DƯƠNG ĐẬM */
+.quick-circles a:nth-of-type(3) .circle-icon{
+    background:radial-gradient(circle at 35% 20%,
+    #258eea 0%,#0759c1 38%,#063a89 75%,#061d4b 100%) !important;
+}
+
+/* CAM ĐẬM */
+.quick-circles a:nth-of-type(4) .circle-icon{
+    background:radial-gradient(circle at 35% 20%,
+    #f99a20 0%,#d45a00 38%,#963800 75%,#4c1900 100%) !important;
+}
+
+/* VÀNG KIM ĐẬM */
+.quick-circles a:nth-of-type(6) .circle-icon{
+    background:radial-gradient(circle at 35% 20%,
+    #f8d32b 0%,#c99400 38%,#916000 75%,#493000 100%) !important;
+}
+
+/* TÍM ĐẬM */
+.quick-circles a:nth-of-type(7) .circle-icon{
+    background:radial-gradient(circle at 35% 20%,
+    #a34ae8 0%,#7020bb 38%,#4b147e 75%,#26083f 100%) !important;
+}
+
+/* XANH NGỌC ĐẬM */
+.quick-circles a:nth-of-type(8) .circle-icon{
+    background:radial-gradient(circle at 35% 20%,
+    #13c8d8 0%,#008a9f 38%,#005d70 75%,#00303c 100%) !important;
+}
+
+/* XANH COBALT ĐẬM */
+.quick-circles a:nth-of-type(9) .circle-icon{
+    background:radial-gradient(circle at 35% 20%,
+    #4779ed 0%,#2449bd 38%,#182f82 75%,#0b1745 100%) !important;
+}
+
+/* GIỮ CHỮ TRẮNG NỔI BẬT */
+.quick-circles .circle-label{
+    color:#ffffff !important;
+    font-weight:900 !important;
+    text-shadow:
+        0 1px 2px #000,
+        0 2px 4px #000,
+        0 0 7px #000 !important;
+}
+
+
+/* CĂN GIỮA VÀ THU NHỎ HUY HIỆU SAO VÀNG */
+.quick-circles .hero-emblem{
+    display:flex;
+    grid-column:5;
+    grid-row:1;
+    width:96px;
+    height:96px;
+    margin:0 auto;
+    padding:0;
+    justify-self:center;
+    align-self:center;
+    position:relative;
+    background:none;
+    border:none;
+    outline:none;
+    box-shadow:none;
+}
+
+.quick-circles .hero-emblem img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+/* TRÊN ĐIỆN THOẠI */
+@media(max-width:700px){
+    .quick-circles .hero-emblem{
+        grid-column:1/-1;
+        grid-row:1;
+        width:60px;
+        height:60px;
+        margin:0 auto 3px;
+    }
+}/* CHỈNH HUY HIỆU SAO VÀNG KHÍT VỚI VÒNG TRÒN */
+.quick-circles .hero-emblem{
+    width:96px !important;
+    height:96px !important;
+    margin:0 auto !important;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:visible;
+    background:none !important;
+    border:none !important;
+    outline:none !important;
+    box-shadow:none !important;
+}
+
+/* XÓA VÒNG TRÒN CSS CŨ */
+.quick-circles .hero-emblem:after{
+    display:none !important;
+    content:none !important;
+}
+
+/* PHÓNG TO HÌNH HUY HIỆU ĐỂ KHÍT HƠN */
+.quick-circles .hero-emblem img{
+    position:absolute;
+    width:150px !important;
+    height:150px !important;
+    max-width:none !important;
+    object-fit:contain;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    display:block;    animation:starGlow 2.5s ease-in-out infinite;
+    filter:
+        drop-shadow(0 0 3px #fff2a6)
+        drop-shadow(0 0 7px #ffd700)
+        drop-shadow(0 0 14px #ffbf00)
+        drop-shadow(0 0 24px rgba(255,190,0,.9));
+}
+
+/* ĐIỆN THOẠI */
+@media(max-width:700px){
+    .quick-circles .hero-emblem{
+        width:60px !important;
+        height:60px !important;
+    }
+
+    .quick-circles .hero-emblem img{
+        width:74px !important;
+        height:74px !important;
+    }
+}/* HIỆU ỨNG NGÔI SAO VÀNG PHÁT SÁNG */
+@keyframes starGlow{
+    0%,100%{
+        filter:
+            drop-shadow(0 0 3px #fff2a6)
+            drop-shadow(0 0 7px #ffd700)
+            drop-shadow(0 0 14px #ffbf00);
+    }
+    50%{
+        filter:
+            drop-shadow(0 0 5px #fff)
+            drop-shadow(0 0 12px #ffe45c)
+            drop-shadow(0 0 22px #ffbf00)
+            drop-shadow(0 0 32px rgba(255,190,0,.9));
+    }
+}/* Hiển thị ngày giờ trên trang chủ */
+#datetime {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+}
+
+.hero-user {
+    color: #15365c;
+}.pwa-control{
+    color:#fff;
+    text-decoration:none;
+    background:linear-gradient(#087a4e,#03432e);
+    border:1px solid #c9f4c988;
+    border-radius:18px;
+    padding:8px 11px;
+    font-size:12px;
+    font-weight:800;
+    white-space:nowrap;
+    box-shadow:0 2px 6px #002d3766;
+}
+
+.pwa-control:hover{
+    filter:brightness(1.2);
+}
+
+#appStatus{
+    position:fixed;
+    bottom:65px;
+    right:12px;
+    z-index:20;
+    color:#fff;
+    background:#07543b;
+    padding:5px 9px;
+    border-radius:8px;
+    font-size:10px;
+}/* MÀU SẮC THỜI GIAN VÀ TÀI KHOẢN */
+.hero-user{
+    background:linear-gradient(135deg,#064b38,#087a50) !important;
+    color:#ffffff !important;
+    border:1px solid #f3c84b;
+    box-shadow:0 2px 8px #002d2577;
+}
+
+#datetime{
+    color:#ffffff !important;
+    font-weight:700;
+    text-shadow:0 1px 3px #000;
+}
+
+.hero-user a{
+    color:#ffe36b !important;
+    font-weight:900;
+}
+
+.hero-user img{
+    border:2px solid #ffffff;
+}
+/* LÀM TRONG SUỐT KHU VỰC THƯ VIỆN VÀ KẾT QUẢ */
+.lower-grid {
+    background: transparent !important;
+    border-color: rgba(255,255,255,.25);
+    box-shadow: none;
+}
+
+/* HIỆU ỨNG KÍNH TRONG SUỐT */
+.lower-grid > .panel {
+    background: rgba(255,255,255,.13) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(255,255,255,.55);
+    box-shadow:
+        0 8px 25px rgba(0,35,65,.12),
+        0 0 12px rgba(0,210,255,.10),
+        inset 0 1px 2px rgba(255,255,255,.65);
+}/* RIÊNG KHUNG KẾT QUẢ HOẠT ĐỘNG */
+.lower-grid > .panel:last-child {
+    background: rgba(255,255,255,.72) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}</style>
+</head>
+
+<body>
+
+<audio id="backgroundMusic" loop>
+    <source src="nhacnen.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-control" id="musicButton" onclick="toggleMusic()">▶️ Bật nhạc</button>
+
+<header class="site-hero" aria-label="Banner Bộ Chỉ huy Quân sự tỉnh Quảng Ninh">
+
+    <div class="home-actions">
+    <button id="installBtn" class="pwa-control" onclick="installApp()" style="display:none">
+        📲 Cài đặt ứng dụng
+    </button>
+</div><nav class="topnav" aria-label="Điều hướng chính">
+
+    <div class="hero-user">
+        <span id="datetime">📅 Đang cập nhật...</span>　|　
+        <a href="quantri.html">
+            <img id="userAvatar" src="avatar1.png" alt="">
+            <span class="user-name">Đăng nhập</span>
+        </a>
+    </div>
+
+    <a href="index.html">🏠 Trang chủ</a>
+    <a href="thuvien.html">📚 Thư viện</a>
+    <a href="kehoach.html">📅 Kế hoạch</a>
+    <a href="baocao1.html">📊 Báo cáo</a>
+    <a href="#" onclick="alert('Hãy liên hệ với BCH QS Xã Yên Mỹ để được hỗ trợ.'); return false;">🎧 Hỗ trợ</a>
+    <a href="quantri.html">🔐 Đăng nhập</a>
+
+</nav>
+
+</header>
+
+<!-- 8 NÚT TRÒN -->
+<nav class="quick-circles" aria-label="Chức năng nổi bật">
+
+    <a class="circle-link" href="gdct-co-ban.html">
+        <span class="circle-icon">📖</span>
+        <span class="circle-label">Giáo dục<br>chính trị</span>
+    </a>
+
+    <a class="circle-link" href="pho-bien-gdpl.html">
+        <span class="circle-icon">⚖️</span>
+        <span class="circle-label">Tuyên truyền<br>pháp luật</span>
+    </a>
+
+    <a class="circle-link" href="nam-quan-ly-tu-tuong.html">
+        <span class="circle-icon">👥</span>
+        <span class="circle-label">Công tác<br>tư tưởng</span>
+    </a>
+
+    <a class="circle-link" href="truyenthannoibo.html">
+        <span class="circle-icon">📻</span>
+        <span class="circle-label">Truyền thanh<br>nội bộ</span>
+    </a>
+
+    <div class="hero-emblem">
+    <img src="./huy-hieu-quan-doi.png" alt="Huy hiệu sao vàng quân đội">
+</div>   <a class="circle-link" href="loibachongayxua.html">
+        <span class="circle-icon">🌸</span>
+        <span class="circle-label">Lời Bác Hồ<br>dạy</span>
+    </a>
+
+    <a class="circle-link" href="thuvien.html">
+        <span class="circle-icon">▤</span>
+        <span class="circle-label">Thư viện<br>Thư viện</span>
+    </a>
+
+    <a class="circle-link" href="chuyendoiso.html">
+        <span class="circle-icon">🔄</span>
+        <span class="circle-label">Bình dân học vụ số</span>
+    </a>
+
+    <a class="circle-link" href="hoidap.html">
+        <span class="circle-icon">🤖</span>
+        <span class="circle-label">Hỏi đáp</span>
+    </a>
+
+</nav>
+
+<main class="page">
+
+    <!-- TIN TỨC - LỊCH - LIÊN KẾT -->
+    <section class="main-grid">
+
+        <section class="panel">
+            <div class="panel-head">
+                <div class="panel-title">⭐ TIN TỨC - SỰ KIỆN NỔI BẬT</div>
+                <a class="more" href="tintuc.html">Xem thêm →</a>
+            </div>
+
+            <div class="news-layout">
+
+                <article class="feature-news">
+                    <a class="feature-image" id="homeFeatureImage" href="#" target="_blank" rel="noopener noreferrer">
+                        <span id="homeFeatureOverlay">Đang tải tin tức nổi bật...</span>
+                    </a>
+
+                    <h3>
+                        <a id="homeFeatureTitle" href="#" target="_blank">Đang tải tin tức...</a>
+                    </h3>
+
+                    <div class="meta">
+                        <span>▣ <span id="homeFeatureDate">Đang cập nhật</span></span>
+                        <span>◉ Tin tức đơn vị</span>
+                    </div>
+                </article>
+
+                <div class="news-list">
+
+                    <article class="news-item">
+                        <a class="thumb" id="homeNewsImage1" href="#" target="_blank"></a>
+                        <div>
+                            <h4><a id="homeNewsTitle1" href="#" target="_blank">Đang tải tin tức...</a></h4>
+                            <div class="meta">◷ <span id="homeNewsDate1">Đang cập nhật</span></div>
+                        </div>
+                    </article>
+
+                    <article class="news-item">
+                        <a class="thumb" id="homeNewsImage2" href="#" target="_blank"></a>
+                        <div>
+                            <h4><a id="homeNewsTitle2" href="#" target="_blank">Đang tải tin tức...</a></h4>
+                            <div class="meta">◷ <span id="homeNewsDate2">Đang cập nhật</span></div>
+                        </div>
+                    </article>
+
+                    <article class="news-item">
+                        <a class="thumb" id="homeNewsImage3" href="#" target="_blank"></a>
+                        <div>
+                            <h4><a id="homeNewsTitle3" href="#" target="_blank">Đang tải tin tức...</a></h4>
+                            <div class="meta">◷ <span id="homeNewsDate3">Đang cập nhật</span></div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- LỊCH HOẠT ĐỘNG -->
+        <section class="panel calendar">
+
+            <div class="panel-head">
+                <div class="panel-title">🗓 LỊCH HOẠT ĐỘNG</div>
+                <div class="month-controls">
+                    <button aria-label="Tháng trước" onclick="changeMonth(-1)">‹</button>
+                    <button aria-label="Tháng sau" onclick="changeMonth(1)">›</button>
+                </div>
+            </div>
+
+            <div class="month-name" id="monthName"></div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+
+            <div class="legend">
+                <span><i class="dot" style="background:#1475d1"></i>Hoạt động Bộ CHQS tỉnh</span>
+                <span><i class="dot" style="background:#18a05a"></i>Hoạt động đơn vị</span>
+                <span><i class="dot" style="background:#f29b24"></i>Khác</span>
+            </div>
+
+        </section>
+
+        <!-- LIÊN KẾT NHANH -->
+        <section class="panel">
+
+            <div class="panel-head">
+                <div class="panel-title">🔗 LIÊN KẾT NHANH</div>
+                
+            </div>
+
+            <div class="quick-list">
+                <a class="quick-row" href="hoctapbac.html"><span>⭐</span>Học tập và làm theo Bác</a>
+                <a class="quick-row" href="thongke.html"><span>🔄</span>Thống kê</a>
+                <a class="quick-row" href="thidua.html"><span>🏆</span>Phong trào thi đua</a>
+                <a class="quick-row" href="thongtin.html"><span>📢</span>Thông tin đơn vị</a>
+    <a class="quick-row" href="tinhluong.html"><span>💰</span>Tính lương</a>        </div>
+
+        </section>
+
+    </section>
+
+    <!-- THƯ VIỆN VÀ KẾT QUẢ HOẠT ĐỘNG - ĐÃ XÓA 2 BANNER -->
+    <section class="lower-grid">
+
+        <!-- THƯ VIỆN ĐIỆN TỬ -->
+        <section class="panel">
+
+            <div class="panel-head">
+                <div class="panel-title">📚 THƯ VIỆN ĐIỆN TỬ</div>
+                <a class="more" href="thuvien.html">Xem tất cả →</a>
+            </div>
+
+            <div class="library-grid">
+
+                <a class="lib-item" href="tailieu.html">
+                    <div class="lib-icon">📕</div>
+                    <strong>Tài liệu<br>tuyên truyền</strong>
+                </a>
+
+                <a class="lib-item" href="sachbao.html">
+                    <div class="lib-icon">📘</div>
+                    <strong>Sách, Báo</strong>
+                </a>
+
+               <a class="lib-item" href="#" onclick="alert('Tính năng cập nhật sau!'); return false;">
+    <div class="lib-icon">🎬</div>
+    <strong>Video<br>giáo dục</strong>
+</a>             <a class="lib-item" href="tulieulichsu.html">
+                    <div class="lib-icon">🖼️</div>
+                    <strong>Tư liệu<br>lịch sử</strong>
+                </a>
+
+                <a class="lib-item" href="loibachongayxua.html">
+                    <div class="lib-icon">📜</div>
+                    <strong>Lời Bác Hồ dạy</strong>
+                </a>
+
+                <a class="lib-item" href="truyenthannoibo.html">
+                    <div class="lib-icon">📻</div>
+                    <strong>Truyền thanh<br>nội bộ</strong>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- KẾT QUẢ HOẠT ĐỘNG -->
+        <section class="panel">
+
+            <div class="panel-head">
+                <div class="panel-title">📊 KẾT QUẢ HOẠT ĐỘNG</div>
+                <a class="more" href="thongke.html">Xem chi tiết →</a>
+            </div>
+
+            <div id="homeResultChart">
+                <div style="width:100%;text-align:center;color:#718096;padding:45px 5px">
+                    Đang tải số liệu...
+                </div>
+            </div>
+
+        </section>
+
+    </section>
+
+   
+
+</main>
+
+<script>
+
+/* ĐỒNG HỒ */
+function updateClock(){
+    const d=new Date();
+    const days=['Chủ nhật','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'];
+    const el=document.getElementById('datetime');
+
+    if(el){
+        el.textContent='▦ '+days[d.getDay()]+', '+d.toLocaleDateString('vi-VN')+' '+d.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
+    }
+}
+
+updateClock();
+setInterval(updateClock,30000);
+
+
+/* LỊCH HOẠT ĐỘNG */
+let today=new Date();
+let shown=new Date(today.getFullYear(),today.getMonth(),1);
+
+function renderCalendar(){
+
+    const y=shown.getFullYear();
+    const m=shown.getMonth();
+
+    const names=[
+        'Tháng Một','Tháng Hai','Tháng Ba','Tháng Tư',
+        'Tháng Năm','Tháng Sáu','Tháng Bảy','Tháng Tám',
+        'Tháng Chín','Tháng Mười','Tháng Mười Một','Tháng Mười Hai'
+    ];
+
+    document.getElementById('monthName').textContent=names[m]+' '+y;
+
+    const grid=document.getElementById('calendarGrid');
+    grid.innerHTML='';
+
+    ['T2','T3','T4','T5','T6','T7','CN'].forEach(n=>{
+        const e=document.createElement('div');
+        e.className='day-name';
+        e.textContent=n;
+        grid.appendChild(e);
+    });
+
+    const first=(new Date(y,m,1).getDay()+6)%7;
+    const count=new Date(y,m+1,0).getDate();
+    const prev=new Date(y,m,0).getDate();
+
+    for(let i=0;i<42;i++){
+
+        let day,cls='day';
+
+        if(i<first){
+            day=prev-first+i+1;
+            cls+=' muted';
+        }
+        else if(i>=first+count){
+            day=i-first-count+1;
+            cls+=' muted';
+        }
+        else{
+            day=i-first+1;
+
+            if(y===today.getFullYear()&&m===today.getMonth()&&day===today.getDate()){
+                cls+=' today';
+            }
+
+            if([5,11,20,25].includes(day)){
+                cls+=' event';
+            }
+        }
+
+        const e=document.createElement('div');
+        e.className=cls;
+        e.textContent=day;
+        grid.appendChild(e);
+    }
+}
+
+function changeMonth(n){
+    shown.setMonth(shown.getMonth()+n);
+    renderCalendar();
+}
+
+renderCalendar();
+
+
+/* API THỐNG KÊ */
+const DOCUMENTS_API="https://script.google.com/macros/s/AKfycbyUr22EYxNOhgYkMJex9Td4OiQtlCFG6lVpnQEQUYYW4PUnOt1hY4CgV0D-ES2QQWPRPQ/exec";
+
+const PLANS_API="https://script.google.com/macros/s/AKfycbxvm9pQKudVMO7Mkqpg9CvtpDYrEZ5F7ehA0ImS2KgdcbTVDR3hQiYNGHTBAt8m-W5z/exec";
+
+const REPORTS_API="https://script.google.com/macros/s/AKfycby3nqyc3C047zYDqdpE3BGhEGBDhFLbN6j0eFm9ydd63o93O4k7tHXGAcswcjj67BQ0/exec";
+
+const MEDIA_API="https://script.google.com/macros/s/AKfycbxA827iAl0HaN6YAwZwu_uZtSvmDXofTEe1kfCA6GD70ANT5iMck1BNrVvooa4XtCjf/exec";
+
+window.homeChartData={
+    documents:null,
+    plans:null,
+    media:null,
+    reports:null
+};
+
+
+/* VẼ BIỂU ĐỒ */
+function renderHomeChart(){
+
+    const chart=document.getElementById('homeResultChart');
+    const data=window.homeChartData;
+
+    const values=[
+        data.documents,
+        data.plans,
+        data.media,
+        data.reports
+    ];
+
+    if(values.some(v=>v===null))return;
+
+    if(values.some(v=>v==='error')){
+        chart.innerHTML='<div style="width:100%;text-align:center;color:#c0392b;padding:45px 5px">Không tải đủ dữ liệu biểu đồ. Vui lòng tải lại trang.</div>';
+        return;
+    }
+
+    const items=[
+        {name:'Tài liệu',value:data.documents,color:'#2474d2'},
+        {name:'Kế hoạch',value:data.plans,color:'#19a45b'},
+        {name:'Hình ảnh,<br>video',value:data.media,color:'#f07824'},
+        {name:'Báo cáo',value:data.reports,color:'#784bc6'}
+    ];
+
+    const maxValue=Math.max(...items.map(x=>x.value),1);
+
+    chart.innerHTML='';
+
+    items.forEach(item=>{
+
+        const wrap=document.createElement('div');
+        wrap.className='bar-wrap';
+
+        const number=document.createElement('div');
+        number.className='bar-value';
+        number.textContent=item.value.toLocaleString('vi-VN');
+
+        const bar=document.createElement('div');
+        bar.className='bar';
+        bar.style.background=item.color;
+        bar.style.height=(item.value===0?0:Math.max(5,item.value/maxValue*92))+'px';
+
+        const label=document.createElement('div');
+        label.className='bar-label';
+        label.innerHTML=item.name;
+
+        wrap.append(number,bar,label);
+        chart.appendChild(wrap);
+    });
+}
+
+function setHomeChartData(key,value){
+    window.homeChartData[key]=value;
+    renderHomeChart();
+}
+
+
+/* DỮ LIỆU TÀI LIỆU */
+window.homeDocumentsCallback=function(data){
+if(data&&data.success&&Array.isArray(data.documents)){
+
+        const total=data.documents.length;
+        setHomeChartData('documents',total);
+
+    }else{
+        setHomeChartData('documents','error');
+    }
+};
+
+
+/* DỮ LIỆU KẾ HOẠCH */
+window.homePlansCallback=function(data){
+if(data&&data.success&&Array.isArray(data.plans)){
+
+        const total=data.plans.filter(plan=>{
+
+            const date=String(plan.startDate||plan.date||'').trim();
+
+            return /^2026-/.test(date)||/^\d{1,2}\/\d{1,2}\/2026$/.test(date);
+
+        }).length;
+        setHomeChartData('plans',total);
+
+    }else{
+        setHomeChartData('plans','error');
+
+        console.error('Lỗi dữ liệu kế hoạch:',data);
+    }
+};
+
+
+/* DỮ LIỆU BÁO CÁO */
+window.homeReportsCallback=function(data){
+if(data&&data.success){
+
+        const total=Number(data.total||0);
+        setHomeChartData('reports',total);
+
+    }else{
+        setHomeChartData('reports','error');
+    }
+};
+
+
+/* DỮ LIỆU HÌNH ẢNH VIDEO */
+window.homeMediaCallback=function(data){
+if(data&&data.success){
+
+        const total=Number(data.total||0);
+        setHomeChartData('media',total);
+
+    }else{
+        setHomeChartData('media','error');
+    }
+};
+
+
+/* TẢI API */
+function loadHomeStats(apiUrl,action,callbackName){
+
+    const script=document.createElement('script');
+
+    script.src=apiUrl+'?action='+encodeURIComponent(action)+'&callback='+encodeURIComponent(callbackName)+'&t='+Date.now();
+
+    script.onerror=function(){
+
+        const map={
+            homeDocumentsCallback:'documents',
+            homePlansCallback:'plans',
+            homeReportsCallback:'reports',
+            homeMediaCallback:'media'
+        };
+
+        const key=map[callbackName];
+        if(key){
+            setHomeChartData(key,'error');
+        }
+    };
+
+    document.head.appendChild(script);
+}
+
+loadHomeStats(DOCUMENTS_API,'list','homeDocumentsCallback');
+loadHomeStats(PLANS_API,'plans','homePlansCallback');
+loadHomeStats(REPORTS_API,'reports','homeReportsCallback');
+loadHomeStats(MEDIA_API,'media','homeMediaCallback');
+
+
+/* THÔNG TIN NGƯỜI DÙNG */
+const tenDangNhap = sessionStorage.getItem('tenDangNhap');
+const anhDaiDien = sessionStorage.getItem('anhDaiDien');
+
+const heroUser = document.querySelector('.hero-user');
+const userName = document.querySelector('.user-name');
+const avatar = document.getElementById('userAvatar');
+
+if (tenDangNhap) {
+    heroUser.style.display = 'block';
+    userName.textContent = tenDangNhap;
+
+    if (anhDaiDien) {
+        avatar.src = anhDaiDien;
+    }
+}
+
+
+/* API TIN TỨC */
+const RSS_API="https://script.google.com/macros/s/AKfycbxW36lD2zlUJl0FAQLbAUHb7phLUkZ3u3pMEy5BXxtE8CY0DR38teVautAZX2wf5NXn/exec";
+
+
+function formatNewsDate(dateString){
+
+    if(!dateString)return'';
+
+    const date=new Date(dateString);
+
+    return isNaN(date.getTime())?'':date.toLocaleDateString('vi-VN');
+}
+
+
+function setNewsImage(id,item){
+
+    const element=document.getElementById(id);
+
+    if(!element)return;
+
+    if(item.thumbnail){
+        element.style.backgroundImage="url('"+item.thumbnail.replace(/'/g,'%27')+"')";
+    }
+
+    const link=element.closest('a');
+
+    if(link&&item.link){
+        link.href=item.link;
+        link.target='_blank';
+        link.rel='noopener noreferrer';
+    }
+}
+
+
+function setNewsItem(titleId,dateId,imageId,item){
+
+    const title=document.getElementById(titleId);
+    const date=document.getElementById(dateId);
+
+    if(title){
+
+        title.textContent=item.title||'Chưa có tiêu đề';
+
+        const link=title.tagName==='A'?title:title.closest('a');
+
+        if(link&&item.link){
+            link.href=item.link;
+            link.target='_blank';
+            link.rel='noopener noreferrer';
+        }
+    }
+
+    if(date){
+        date.textContent=formatNewsDate(item.pubDate);
+    }
+
+    setNewsImage(imageId,item);
+
+    if(imageId==='homeFeatureImage'){
+
+        const overlay=document.getElementById('homeFeatureOverlay');
+
+        if(overlay){
+            overlay.textContent=item.title||'Tin tức nổi bật';
+        }
+    }
+}
+
+
+function homeRssCallback(data){
+
+    if(!data||!data.success||!data.items){
+        console.error('Không lấy được dữ liệu tin tức.');
+        return;
+    }
+
+    const news=data.items.slice(0,4);
+
+    if(!news.length)return;
+
+    setNewsItem('homeFeatureTitle','homeFeatureDate','homeFeatureImage',news[0]);
+
+    for(let i=1;i<4;i++){
+
+        if(!news[i])break;
+
+        setNewsItem('homeNewsTitle'+i,'homeNewsDate'+i,'homeNewsImage'+i,news[i]);
+    }
+}
+
+
+function loadHomeNews(){
+
+    const script=document.createElement('script');
+
+    script.src=RSS_API+'?callback=homeRssCallback&t='+Date.now();
+
+    script.onerror=()=>console.error('Không thể kết nối API tin tức.');
+
+    document.body.appendChild(script);
+}
+
+loadHomeNews();
+
+
+/* NHẠC NỀN */
+const music=document.getElementById('backgroundMusic');
+const musicButton=document.getElementById('musicButton');
+
+music.volume=.4;
+
+window.addEventListener('load',function(){
+
+    music.play()
+    .then(()=>{
+        musicButton.textContent='🔊 Tắt nhạc';
+    })
+    .catch(()=>{
+        musicButton.textContent='▶️ Bật nhạc';
+    });
+
+});
+
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play()
+        .then(()=>{
+            musicButton.textContent='🔊 Tắt nhạc';
+        })
+        .catch(()=>{
+            alert('Không phát được nhạc. Hãy kiểm tra file nhacnen.mp3!');
+        });
+
+    }else{
+
+        music.pause();
+        musicButton.textContent='▶️ Bật nhạc';
+    }
+}
+
+music.addEventListener('error',()=>{
+    musicButton.textContent='❌ Không tìm thấy nhạc';
+});/* ==============================
+   CÀI ĐẶT PWA
+============================== */
+
+let deferredPrompt = null;
+
+const installBtn = document.getElementById('installBtn');
+const appStatus = document.getElementById('appStatus');
+
+function isInstalled(){
+    return window.matchMedia('(display-mode: standalone)').matches ||
+           window.matchMedia('(display-mode: fullscreen)').matches ||
+           navigator.standalone === true;
+}
+
+function isIOS(){
+    return /iphone|ipad|ipod/i.test(navigator.userAgent);
+}
+
+if(isInstalled()){
+    installBtn.style.display='none';
+    appStatus.textContent='Ứng dụng đang chạy ở chế độ đã cài đặt.';
+}else if(isIOS()){
+    installBtn.style.display='inline-block';
+    appStatus.textContent='Có thể cài ứng dụng bằng Safari.';
+}
+
+window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault();
+    deferredPrompt=e;
+    installBtn.style.display='inline-block';
+});
+
+async function installApp(){
+
+    if(isInstalled()){
+        alert('Ứng dụng đã được cài đặt.');
+        return;
+    }
+
+    if(isIOS()){
+        alert(
+            'CÀI ĐẶT TRÊN IPHONE/IPAD:\n\n'+
+            '1. Mở trang bằng Safari.\n'+
+            '2. Nhấn nút Chia sẻ.\n'+
+            '3. Chọn Thêm vào MH chính.\n'+
+            '4. Nhấn Thêm.'
+        );
+        return;
+    }
+
+    if(deferredPrompt){
+        deferredPrompt.prompt();
+        await deferredPrompt.userChoice;
+        deferredPrompt=null;
+        installBtn.style.display='none';
+        return;
+    }
+
+    alert('Hãy mở menu trình duyệt và chọn Cài đặt ứng dụng nếu được hỗ trợ.');
+}
+
+window.addEventListener('appinstalled',function(){
+    installBtn.style.display='none';
+    appStatus.textContent='Đã cài đặt ứng dụng thành công.';
+    deferredPrompt=null;
+});
+
+/* ĐĂNG KÝ SERVICE WORKER */
+
+if('serviceWorker' in navigator){
+    window.addEventListener('load',function(){
+        navigator.serviceWorker.register('./sw.js')
+        .catch(error=>console.error('Lỗi Service Worker:',error));
+    });
+}
+
+
+/* ==============================
+   LÀM MỚI TOÀN BỘ DỮ LIỆU
+============================== */
+
+function refreshPageData(){
+
+    const btn=document.getElementById('refreshBtn');
+
+    btn.disabled=true;
+    btn.textContent='⟳ Đang tải...';
+
+    window.homeChartData={
+        documents:null,
+        plans:null,
+        media:null,
+        reports:null
+    };
+
+    document.getElementById('homeResultChart').innerHTML=
+        '<div style="width:100%;text-align:center;padding:45px 5px">Đang tải số liệu...</div>';
+
+    loadHomeStats(DOCUMENTS_API,'list','homeDocumentsCallback');
+    loadHomeStats(PLANS_API,'plans','homePlansCallback');
+    loadHomeStats(REPORTS_API,'reports','homeReportsCallback');
+    loadHomeStats(MEDIA_API,'media','homeMediaCallback');
+
+    loadHomeNews();
+
+    setTimeout(()=>{
+        btn.disabled=false;
+        btn.textContent='⟳ Làm mới';
+    },3000);
+}
+
+</script><div id="appStatus"></div>
+
+</body>
+</html>
