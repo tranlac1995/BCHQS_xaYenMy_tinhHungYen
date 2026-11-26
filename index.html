@@ -1648,7 +1648,273 @@ button{font:inherit;cursor:pointer}
     background: rgba(255,255,255,.72) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-}</style>
+}
+/* ==========================================
+   TỐI ƯU GIAO DIỆN ĐIỆN THOẠI
+   GIỮ NGUYÊN GIAO DIỆN MÁY TÍNH
+========================================== */
+
+@media(max-width:700px){
+
+    /* THANH ĐIỀU HƯỚNG: KHÔNG ĐỂ NÚT BỊ CHÈN LÊN NHAU */
+    .topnav{
+        left:6px;
+        right:6px;
+        top:6px;
+        display:flex;
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+        gap:5px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        padding:2px 2px 6px;
+        scrollbar-width:none;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .topnav::-webkit-scrollbar{
+        display:none;
+    }
+
+    .topnav a{
+        flex:0 0 auto;
+        font-size:10px;
+        padding:7px 9px;
+        border-radius:20px;
+    }
+
+    .hero-user{
+        position:static;
+        flex:0 0 auto;
+        font-size:9px;
+        padding:6px 8px;
+    }
+
+    /* BANNER */
+    .site-hero{
+        height:190px;
+        background-size:auto 100%;
+        background-position:35% center;
+    }
+
+    /* 8 NÚT TRÒN */
+    .quick-circles{
+        width:100%;
+        max-width:520px;
+        grid-template-columns:repeat(4,minmax(0,1fr));
+        gap:15px 5px;
+        margin:8px auto 16px;
+        padding:0 10px;
+        justify-items:center;
+    }
+
+    .quick-circles .circle-icon{
+        width:64px;
+        height:64px;
+        font-size:25px;
+        padding-top:6px;
+    }
+
+    .quick-circles .circle-label{
+        top:39px;
+        width:60px;
+        font-size:8.5px;
+        line-height:1.08;
+    }
+
+    .quick-circles .circle-link{
+        width:100%;
+        min-width:0;
+    }
+
+    .quick-circles .circle-link:hover .circle-icon{
+        transform:none;
+    }
+
+    /* HUY HIỆU SAO VÀNG */
+    .quick-circles .hero-emblem{
+        grid-column:1/-1;
+        grid-row:1;
+        width:60px !important;
+        height:60px !important;
+        margin:0 auto 4px !important;
+    }
+
+    .quick-circles .hero-emblem img{
+        width:74px !important;
+        height:74px !important;
+    }
+
+    /* KHUNG NỘI DUNG */
+    .page{
+        padding:0 9px 15px;
+    }
+
+    .main-grid,
+    .lower-grid{
+        grid-template-columns:minmax(0,1fr);
+    }
+
+    .main-grid{
+        gap:12px;
+    }
+
+    .main-grid>.panel:first-child{
+        grid-column:auto;
+    }
+
+    .panel{
+        min-width:0;
+    }
+
+    /* TIÊU ĐỀ CÁC KHUNG */
+    .panel-title{
+        font-size:13px;
+        letter-spacing:0;
+    }
+
+    .more{
+        font-size:10px;
+    }
+
+    /* TIN TỨC NỔI BẬT */
+    .news-layout{
+        grid-template-columns:minmax(0,1fr);
+    }
+
+    .feature-image{
+        height:185px;
+        padding:10px;
+    }
+
+    .feature-image span{
+        font-size:13px;
+        line-height:1.3;
+    }
+
+    .feature-news h3{
+        font-size:15px;
+        line-height:1.35;
+        margin:9px 0 7px;
+        overflow-wrap:anywhere;
+    }
+
+    .meta{
+        font-size:10px;
+        gap:7px;
+    }
+
+    /* DANH SÁCH TIN TỨC */
+    .news-list{
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:9px;
+    }
+
+    .news-item{
+        grid-template-columns:60px minmax(0,1fr);
+        gap:6px;
+        min-width:0;
+    }
+
+    .news-item h4{
+        font-size:10px;
+        line-height:1.3;
+    }
+
+    .thumb{
+        height:52px;
+    }
+
+    /* THƯ VIỆN */
+    .library-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:8px;
+    }
+
+    .lib-item{
+        min-width:0;
+        min-height:95px;
+        padding:8px 3px;
+    }
+
+    .lib-icon{
+        font-size:26px;
+    }
+
+    .lib-item strong{
+        font-size:10px;
+        line-height:1.3;
+    }
+
+    /* KHU VỰC THƯ VIỆN VÀ KẾT QUẢ */
+    .lower-grid{
+        padding:9px;
+        gap:12px;
+        margin-top:13px;
+    }
+
+    /* BIỂU ĐỒ */
+    #homeResultChart{
+        height:160px;
+        gap:5px;
+        padding-left:3px;
+        padding-right:3px;
+    }
+
+    #homeResultChart .bar-label{
+        font-size:9px;
+    }
+
+    /* NÚT NHẠC KHÔNG CHE NỘI DUNG */
+    .music-control{
+        right:12px;
+        bottom:18px;
+        padding:8px 11px;
+        font-size:11px;
+    }
+
+    /* TẮT HIỆU ỨNG DI CHUYỂN KHI CHẠM */
+    .main-grid>.panel:hover,
+    .lower-grid>.panel:hover,
+    .lib-item:hover{
+        transform:none;
+    }
+}
+
+/* ĐIỆN THOẠI MÀN HÌNH NHỎ */
+@media(max-width:390px){
+
+    .quick-circles{
+        gap:13px 3px;
+        padding:0 5px;
+    }
+
+    .quick-circles .circle-icon{
+        width:58px;
+        height:58px;
+        font-size:23px;
+    }
+
+    .quick-circles .circle-label{
+        top:35px;
+        width:55px;
+        font-size:8px;
+    }
+
+    .news-list{
+        grid-template-columns:1fr;
+    }
+
+    .feature-image{
+        height:170px;
+    }
+
+    .feature-news h3{
+        font-size:14px;
+    }
+}
+</style>
 </head>
 
 <body>
