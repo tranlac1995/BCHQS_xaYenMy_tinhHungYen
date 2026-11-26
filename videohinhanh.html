@@ -1,0 +1,1918 @@
+﻿html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102f27">
+
+<title>Thư viện hình ảnh - Video | Phòng Hồ Chí Minh</title>
+
+<style>
+:root {
+    --green: #123c30;
+    --green2: #1b5944;
+    --gold: #d9b65c;
+    --bg: #edf2ed;
+    --white: #ffffff;
+    --text: #243b32;
+    --muted: #78877f;
+    --line: #e3eae5;
+    --shadow: 0 10px 30px rgba(17,52,39,.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* BACKGROUND */
+
+.page-background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(12,43,33,.94),
+            rgba(23,76,56,.87)
+        ),
+        url("https://images.unsplash.com/photo-1519681393784-d120267933ba")
+        center/cover no-repeat;
+}
+
+.page-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(218,183,92,.15),
+            transparent 35%
+        );
+}
+
+/* HEADER */
+
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 35px 20px 40px;
+    color: white;
+    text-align: center;
+    background:
+        linear-gradient(
+            110deg,
+            rgba(8,39,30,.97),
+            rgba(24,83,59,.94)
+        );
+    border-bottom: 3px solid var(--gold);
+}
+
+header::before {
+    content: "★";
+    position: absolute;
+    left: 7%;
+    top: -65px;
+    font-size: 230px;
+    color: rgba(255,255,255,.035);
+}
+
+header::after {
+    content: "★";
+    position: absolute;
+    right: 7%;
+    bottom: -110px;
+    font-size: 230px;
+    color: rgba(255,255,255,.035);
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.header-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    font-size: 32px;
+    background: rgba(255,255,255,.08);
+    box-shadow: 0 0 25px rgba(217,182,92,.18);
+}
+
+header h1 {
+    margin: 0 0 10px;
+    color: #f3d47f;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 0;
+    color: rgba(255,255,255,.85);
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.header-line {
+    width: 90px;
+    height: 3px;
+    margin: 18px auto 0;
+    background: var(--gold);
+    border-radius: 5px;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1250px;
+    margin: 28px auto 50px;
+    padding: 0 20px;
+}
+
+.back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 11px 17px;
+    border-radius: 8px;
+    background: rgba(255,255,255,.13);
+    border: 1px solid rgba(255,255,255,.2);
+    margin-bottom: 20px;
+    transition: .2s;
+}
+
+.back:hover {
+    background: var(--gold);
+    color: #173b2e;
+}
+
+/* WELCOME */
+
+.welcome {
+    padding: 25px 28px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--gold);
+    margin-bottom: 23px;
+}
+
+.welcome h2 {
+    margin: 0 0 9px;
+    color: var(--green);
+    font-size: 21px;
+}
+
+.welcome p {
+    margin: 0;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+/* STATISTICS */
+
+.overview {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.overview-item {
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.overview-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background: #edf4ee;
+}
+
+.overview-item strong {
+    display: block;
+    color: var(--green);
+    font-size: 23px;
+    margin-bottom: 4px;
+}
+
+.overview-item span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* SECTION TITLE */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 0 17px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 19px;
+    color: white;
+    letter-spacing: .3px;
+}
+
+.section-heading small {
+    color: rgba(255,255,255,.7);
+}
+
+/* CATEGORY */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: 17px;
+    margin-bottom: 25px;
+}
+
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 22px 17px;
+    min-height: 210px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+    transition: .25s;
+    border: 1px solid rgba(255,255,255,.18);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.22);
+}
+
+.category-card::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    bottom: -65px;
+    width: 150px;
+    height: 150px;
+    border: 20px solid rgba(255,255,255,.08);
+    border-radius: 50%;
+}
+
+.military {
+    background: linear-gradient(140deg,#183f31,#337452);
+}
+
+.political {
+    background: linear-gradient(140deg,#754222,#b77c35);
+}
+
+.logistics {
+    background: linear-gradient(140deg,#24466a,#387ba1);
+}
+
+.technical {
+    background: linear-gradient(140deg,#41405f,#7770a1);
+}
+
+.category-icon {
+    font-size: 35px;
+    margin-bottom: 13px;
+}
+
+.category-card h3 {
+    font-size: 16px;
+    margin: 0 0 8px;
+    letter-spacing: .5px;
+}
+
+.category-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.8);
+    min-height: 36px;
+    margin: 0 0 14px;
+}
+
+.category-count {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 13px;
+    color: #ffe6a4;
+}
+
+.category-actions {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.category-actions button {
+    padding: 9px 12px;
+    font-size: 11px;
+    border-radius: 7px;
+    border: 1px solid rgba(255,255,255,.4);
+    background: rgba(255,255,255,.15);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.category-actions button:hover {
+    background: white;
+    color: var(--green);
+}
+
+/* PANEL */
+
+.panel {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    padding: 23px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 18px;
+}
+
+.panel-heading h2 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--green);
+}
+
+.panel-heading small {
+    color: var(--muted);
+}
+
+/* UPLOAD */
+
+.upload-area {
+    border: 2px dashed #a9c5b1;
+    border-radius: 13px;
+    padding: 30px 18px;
+    text-align: center;
+    background: linear-gradient(135deg,#f5faf5,#eef5ef);
+    transition: .2s;
+}
+
+.upload-area:hover {
+    border-color: var(--green2);
+    background: #f0f7f0;
+}
+
+.upload-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.upload-area h3 {
+    margin: 0 0 8px;
+    color: var(--green);
+    font-size: 17px;
+}
+
+.upload-area p {
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 7px 0 15px;
+}
+
+.upload-fields {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 17px 0;
+}
+
+.upload-fields input,
+.upload-fields select {
+    min-width: 210px;
+    max-width: 100%;
+    padding: 12px;
+    border: 1px solid #ccdacf;
+    border-radius: 8px;
+    background: white;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.file-label {
+    display: inline-flex;
+    padding: 12px 20px;
+    background: #e1eee4;
+    color: var(--green);
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.file-label:hover {
+    background: #d0e4d5;
+}
+
+#mediaFile {
+    display: none;
+}
+
+.primary-btn {
+    border: 0;
+    padding: 12px 26px;
+    border-radius: 8px;
+    color: white;
+    background: linear-gradient(120deg,#174d37,#26754e);
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.primary-btn:hover {
+    background: #0e3928;
+}
+
+.primary-btn:disabled {
+    background: #9aa99e;
+    cursor: not-allowed;
+}
+
+#selectedFile {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--green);
+    font-weight: bold;
+}
+
+#status {
+    margin-top: 13px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+/* LIBRARY */
+
+.library-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dce6de;
+    border-radius: 8px;
+    outline: none;
+    font-size: 13px;
+}
+
+.search-box input:focus {
+    border-color: var(--green2);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.filter-buttons button {
+    border: 1px solid #dce6de;
+    background: #f4f7f4;
+    color: var(--green);
+    border-radius: 7px;
+    padding: 9px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+    background: var(--green);
+    color: white;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 17px;
+}
+
+.media-card {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    min-width: 0;
+    transition: .2s;
+}
+
+.media-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(20,60,40,.12);
+}
+
+.media-preview {
+    position: relative;
+    height: 195px;
+    background: #e9efeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #54705f;
+    font-size: 42px;
+}
+
+.media-preview img,
+.media-preview video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.media-info {
+    padding: 14px;
+}
+
+.media-category {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    color: #1c6742;
+    background: #e6f2e8;
+    padding: 5px 8px;
+    border-radius: 5px;
+    margin-bottom: 9px;
+}
+
+.media-name {
+    font-weight: bold;
+    color: #203d2e;
+    overflow-wrap: anywhere;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.media-meta {
+    color: #829087;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.media-actions {
+    display: flex;
+    gap: 7px;
+    margin-top: 13px;
+    flex-wrap: wrap;
+}
+
+.media-actions button,
+.media-actions a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 11px;
+    border: 0;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.view-btn {
+    background: #e6f0e8;
+    color: #205b3c;
+}
+
+.download-btn {
+    background: #e7eff9;
+    color: #24578d;
+}
+
+.delete-btn {
+    background: #fce9e8;
+    color: #c22f2a;
+}
+
+.media-actions button:hover,
+.media-actions a:hover {
+    filter: brightness(.94);
+}
+
+.media-actions button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.empty {
+    grid-column: 1/-1;
+    text-align: center;
+    color: var(--muted);
+    padding: 45px 15px;
+    background: #f8faf8;
+    border: 1px dashed #d4dfd6;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+#totalMedia {
+    color: var(--green);
+    font-weight: bold;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,.91);
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: min(100%,1050px);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content img,
+.modal-content video {
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.modal-title {
+    color: white;
+    text-align: center;
+    margin-top: 13px;
+    overflow-wrap: anywhere;
+}
+
+.close-modal {
+    position: absolute;
+    right: 0;
+    top: -45px;
+    background: #c83932;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    background: #102f27;
+    border-top: 2px solid var(--gold);
+    color: rgba(255,255,255,.8);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+footer strong {
+    color: #e9ca79;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px) {
+    .category-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    .media-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:650px) {
+    header {
+        padding: 28px 12px;
+    }
+
+    header h1 {
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    header p {
+        font-size: 11px;
+    }
+
+    .container {
+        padding: 0 12px;
+        margin-top: 17px;
+    }
+
+    .overview {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .overview-item {
+        padding: 13px;
+    }
+
+    .category-grid {
+        gap: 10px;
+    }
+
+    .category-card {
+        padding: 16px 12px;
+        min-height: 205px;
+    }
+
+    .category-card h3 {
+        font-size: 13px;
+    }
+
+    .category-card p {
+        font-size: 11px;
+    }
+
+    .category-actions button {
+        padding: 8px 9px;
+        font-size: 10px;
+    }
+
+    .media-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 10px;
+    }
+
+    .media-preview {
+        height: 145px;
+    }
+
+    .media-info {
+        padding: 10px;
+    }
+
+    .media-name {
+        font-size: 12px;
+    }
+
+    .media-actions {
+        gap: 5px;
+    }
+
+    .media-actions button,
+    .media-actions a {
+        padding: 8px 7px;
+        font-size: 10px;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    .welcome {
+        padding: 18px;
+    }
+
+    .welcome h2 {
+        font-size: 18px;
+    }
+
+    .upload-fields {
+        flex-direction: column;
+    }
+
+    .upload-fields input,
+    .upload-fields select {
+        width: 100%;
+    }
+
+    .filter-buttons {
+        width: 100%;
+    }
+
+    .filter-buttons button {
+        flex: 1;
+    }
+}
+
+@media(max-width:380px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .media-preview {
+        height: 190px;
+    }
+
+    .category-card {
+        min-height: 215px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page-background"></div>
+
+<header>
+    <div class="header-content">
+        <div class="header-icon">🖼️</div>
+
+        <h1>THƯ VIỆN HÌNH ẢNH - VIDEO</h1>
+
+        <p>PHÒNG HỒ CHÍ MINH</p>
+
+        <div class="header-line"></div>
+    </div>
+</header>
+
+<div class="container">
+
+    <a class="back" href="index.html">
+        ← QUAY LẠI TRANG CHỦ
+    </a>
+
+    <section class="welcome">
+        <h2>🏛️ HỆ THỐNG QUẢN LÝ TƯ LIỆU HÌNH ẢNH</h2>
+
+        <p>
+            Nơi lưu trữ, quản lý và khai thác hình ảnh, video
+            các hoạt động của đơn vị. Tư liệu được phân loại
+            theo từng chuyên mục, thuận tiện cho việc tìm kiếm,
+            theo dõi và sử dụng.
+        </p>
+    </section>
+
+    <!-- THỐNG KÊ -->
+
+    <div class="overview">
+
+        <div class="overview-item">
+            <div class="overview-icon">🗂️</div>
+            <div>
+                <strong id="totalMedia">...</strong>
+                <span>TỔNG SỐ TƯ LIỆU</span>
+            </div>
+        </div>
+
+        <div class="overview-item">
+            <div class="overview-icon">📸</div>
+            <div>
+                <strong id="totalImages">...</strong>
+                <span>HÌNH ẢNH</span>
+            </div>
+        </div>
+
+        <div class="overview-item">
+            <div class="overview-icon">🎬</div>
+            <div>
+                <strong id="totalVideos">...</strong>
+                <span>VIDEO</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- DANH MỤC -->
+
+    <div class="section-heading">
+        <h2>★ DANH MỤC TƯ LIỆU</h2>
+        <small>04 chuyên mục quản lý</small>
+    </div>
+
+    <div class="category-grid">
+
+        <article class="category-card military">
+
+            <div class="category-icon">🎖️</div>
+
+            <h3>QUÂN SỰ</h3>
+
+            <p>
+                Huấn luyện, diễn tập, sẵn sàng chiến đấu,
+                hoạt động quân sự.
+            </p>
+
+            <div class="category-count">
+                <span id="count-quan-su">0</span> tư liệu
+            </div>
+
+            <div class="category-actions">
+                <button onclick="selectCategory('quan-su')">
+                    📂 VÀO THƯ VIỆN
+                </button>
+
+                <button onclick="uploadToCategory('quan-su')">
+                    ＋ TẢI LÊN
+                </button>
+            </div>
+
+        </article>
+
+        <article class="category-card political">
+
+            <div class="category-icon">🏛️</div>
+
+            <h3>CHÍNH TRỊ</h3>
+
+            <p>
+                Công tác Đảng, công tác chính trị,
+                tuyên truyền và giáo dục.
+            </p>
+
+            <div class="category-count">
+                <span id="count-chinh-tri">0</span> tư liệu
+            </div>
+
+            <div class="category-actions">
+                <button onclick="selectCategory('chinh-tri')">
+                    📂 VÀO THƯ VIỆN
+                </button>
+
+                <button onclick="uploadToCategory('chinh-tri')">
+                    ＋ TẢI LÊN
+                </button>
+            </div>
+
+        </article>
+
+        <article class="category-card logistics">
+
+            <div class="category-icon">🚑</div>
+
+            <h3>HẬU CẦN</h3>
+
+            <p>
+                Bảo đảm hậu cần, quân y,
+                tăng gia và đời sống bộ đội.
+            </p>
+
+            <div class="category-count">
+                <span id="count-hau-can">0</span> tư liệu
+            </div>
+
+            <div class="category-actions">
+                <button onclick="selectCategory('hau-can')">
+                    📂 VÀO THƯ VIỆN
+                </button>
+
+                <button onclick="uploadToCategory('hau-can')">
+                    ＋ TẢI LÊN
+                </button>
+            </div>
+
+        </article>
+
+        <article class="category-card technical">
+
+            <div class="category-icon">⚙️</div>
+
+            <h3>KỸ THUẬT</h3>
+
+            <p>
+                Bảo quản, bảo dưỡng, sửa chữa
+                và quản lý trang bị kỹ thuật.
+            </p>
+
+            <div class="category-count">
+                <span id="count-ky-thuat">0</span> tư liệu
+            </div>
+
+            <div class="category-actions">
+                <button onclick="selectCategory('ky-thuat')">
+                    📂 VÀO THƯ VIỆN
+                </button>
+
+                <button onclick="uploadToCategory('ky-thuat')">
+                    ＋ TẢI LÊN
+                </button>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- KHU VỰC TẢI LÊN -->
+
+    <section class="panel" id="uploadPanel">
+
+        <div class="panel-heading">
+            <h2>📤 TẢI HÌNH ẢNH - VIDEO LÊN HỆ THỐNG</h2>
+            <small>Quản lý tư liệu trực tuyến</small>
+        </div>
+
+        <div class="upload-area">
+
+            <div class="upload-icon">☁️</div>
+
+            <h3>THÊM TƯ LIỆU MỚI</h3>
+
+            <p>
+                Chọn hình ảnh hoặc video từ thiết bị
+                để đưa vào thư viện của đơn vị.
+            </p>
+
+            <label for="mediaFile" class="file-label">
+                📁 CHỌN HÌNH ẢNH / VIDEO
+            </label>
+
+            <input
+                type="file"
+                id="mediaFile"
+                accept="image/jpeg,image/png,image/gif,image/webp,video/mp4,video/webm,video/quicktime"
+            >
+
+            <div id="selectedFile">
+                Chưa chọn tệp
+            </div>
+
+            <div class="upload-fields">
+
+                <select id="categorySelect">
+                    <option value="quan-su">🎖️ Quân sự</option>
+                    <option value="chinh-tri">🏛️ Chính trị</option>
+                    <option value="hau-can">🚑 Hậu cần</option>
+                    <option value="ky-thuat">⚙️ Kỹ thuật</option>
+                </select>
+
+                <input
+                    type="text"
+                    id="uploader"
+                    placeholder="Nhập tên người tải lên"
+                >
+
+            </div>
+
+            <p>
+                Định dạng: JPG, PNG, GIF, WEBP, MP4, WEBM, MOV.
+                <br>
+                Dung lượng tối đa: 70 MB/tệp.
+            </p>
+
+            <button
+                class="primary-btn"
+                id="uploadBtn"
+                onclick="uploadMedia()"
+            >
+                ⬆ TẢI LÊN HỆ THỐNG
+            </button>
+
+            <div id="status"></div>
+
+        </div>
+
+    </section>
+
+    <!-- DANH SÁCH TƯ LIỆU -->
+
+    <section class="panel" id="libraryPanel">
+
+        <div class="panel-heading">
+
+            <h2 id="libraryTitle">
+                🖼️ TOÀN BỘ HÌNH ẢNH - VIDEO
+            </h2>
+
+            <small>
+                Tổng cộng:
+                <span id="libraryCount">0</span> tư liệu
+            </small>
+
+        </div>
+
+        <div class="library-toolbar">
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchMedia"
+                    placeholder="🔍 Tìm kiếm tên hình ảnh, video..."
+                    oninput="renderMedia(allMedia)"
+                >
+            </div>
+
+            <div class="filter-buttons">
+
+                <button
+                    class="active"
+                    data-category="all"
+                    onclick="selectCategory('all')"
+                >
+                    TẤT CẢ
+                </button>
+
+                <button
+                    data-category="quan-su"
+                    onclick="selectCategory('quan-su')"
+                >
+                    QUÂN SỰ
+                </button>
+
+                <button
+                    data-category="chinh-tri"
+                    onclick="selectCategory('chinh-tri')"
+                >
+                    CHÍNH TRỊ
+                </button>
+
+                <button
+                    data-category="hau-can"
+                    onclick="selectCategory('hau-can')"
+                >
+                    HẬU CẦN
+                </button>
+
+                <button
+                    data-category="ky-thuat"
+                    onclick="selectCategory('ky-thuat')"
+                >
+                    KỸ THUẬT
+                </button>
+
+            </div>
+
+        </div>
+
+        <div id="mediaList" class="media-grid">
+
+            <div class="empty">
+                ⏳ Đang tải dữ liệu thư viện...
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    <strong>★ PHÒNG HỒ CHÍ MINH ★</strong>
+    <br>
+    HỆ THỐNG QUẢN LÝ VÀ LƯU TRỮ HÌNH ẢNH - VIDEO
+    <br>
+    Đoàn kết - Kỷ cương - Sáng tạo - Quyết thắng
+</footer>
+
+<!-- CỬA SỔ XEM ẢNH / VIDEO -->
+
+<div class="modal" id="mediaModal" onclick="closeModal(event)">
+
+    <div class="modal-content" id="modalContent">
+
+        <button
+            class="close-modal"
+            onclick="closeModal()"
+        >×</button>
+
+        <div id="modalMedia"></div>
+
+        <div class="modal-title" id="modalTitle"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* =====================================================
+   KẾT NỐI GOOGLE APPS SCRIPT
+   GIỮ NGUYÊN API GỐC
+===================================================== */
+
+const MEDIA_API =
+"https://script.google.com/macros/s/AKfycbwdNU3lUYxBdhuC3ndc5Sn1stydkiVVRGy17Dy6K9viYw1bpN1n_4F6wyR8DCIOZrt0jA/exec";
+
+const uploaderInput = document.getElementById("uploader");
+
+const tenDangNhap = sessionStorage.getItem("tenDangNhap");
+
+if (tenDangNhap) {
+    uploaderInput.value = tenDangNhap;
+}
+
+/* =====================================================
+   DỮ LIỆU VÀ DANH MỤC
+===================================================== */
+
+let allMedia = [];
+
+let currentCategory = "all";
+
+const categories = {
+    "quan-su": "QUÂN SỰ",
+    "chinh-tri": "CHÍNH TRỊ",
+    "hau-can": "HẬU CẦN",
+    "ky-thuat": "KỸ THUẬT"
+};
+
+function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, function(char) {
+        return {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        }[char];
+    });
+}
+
+/* =====================================================
+   CHỌN DANH MỤC
+===================================================== */
+
+function selectCategory(category) {
+
+    currentCategory = category;
+
+    document.querySelectorAll(".filter-buttons button")
+        .forEach(function(button) {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.category === category
+            );
+
+        });
+
+    const title = document.getElementById("libraryTitle");
+
+    if (category === "all") {
+        title.textContent = "🖼️ TOÀN BỘ HÌNH ẢNH - VIDEO";
+    } else {
+        title.textContent =
+            "📂 THƯ VIỆN " + categories[category];
+    }
+
+    renderMedia(allMedia);
+
+    document.getElementById("libraryPanel")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+}
+
+/* =====================================================
+   CHỌN DANH MỤC VÀ TẢI LÊN
+===================================================== */
+
+function uploadToCategory(category) {
+
+    document.getElementById("categorySelect").value = category;
+
+    document.getElementById("uploadPanel")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    document.getElementById("mediaFile").click();
+}
+
+/* =====================================================
+   HIỂN THỊ TÊN TỆP ĐƯỢC CHỌN
+===================================================== */
+
+document.getElementById("mediaFile")
+    .addEventListener("change", function() {
+
+        const file = this.files[0];
+
+        document.getElementById("selectedFile").textContent =
+            file ? "📎 " + file.name : "Chưa chọn tệp";
+
+    });
+
+/* =====================================================
+   XÓA TỆP
+   GIỮ NGUYÊN PHƯƠNG THỨC POST GỐC
+===================================================== */
+
+async function deleteMedia(fileId, button) {
+
+    if (!fileId) {
+        alert("Không tìm thấy ID tệp cần xóa.");
+        return;
+    }
+
+    if (!confirm("Bạn có chắc chắn muốn xóa hình ảnh/video này không?")) {
+        return;
+    }
+
+    if (button) {
+        button.disabled = true;
+        button.textContent = "ĐANG XÓA...";
+    }
+
+    const params = new URLSearchParams();
+
+    params.append("action", "delete");
+    params.append("fileId", fileId);
+
+    try {
+
+        await fetch(MEDIA_API, {
+            method: "POST",
+            body: params
+        });
+
+        setTimeout(function() {
+            loadMedia();
+        }, 2000);
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Không gửi được yêu cầu xóa. Vui lòng thử lại.");
+
+        if (button) {
+            button.disabled = false;
+            button.textContent = "XÓA";
+        }
+
+    }
+
+}
+
+/* =====================================================
+   TẢI DANH SÁCH TƯ LIỆU
+   GIỮ NGUYÊN JSONP GỐC
+===================================================== */
+
+function loadMedia() {
+
+    const script = document.createElement("script");
+
+    const callbackName = "mediaCallback_" + Date.now();
+
+    window[callbackName] = function(data) {
+
+        document.getElementById("totalMedia").textContent =
+            data && data.success ? data.total : "--";
+
+        if (data && data.success && Array.isArray(data.media)) {
+
+            allMedia = data.media;
+
+            updateStatistics();
+
+            renderMedia(allMedia);
+
+        } else {
+
+            document.getElementById("mediaList").innerHTML =
+                '<div class="empty">Không tải được dữ liệu.</div>';
+
+        }
+
+        delete window[callbackName];
+
+        script.remove();
+
+    };
+
+    script.onerror = function() {
+
+        document.getElementById("totalMedia").textContent = "--";
+
+        document.getElementById("mediaList").innerHTML =
+            '<div class="empty">Không kết nối được máy chủ.</div>';
+
+        delete window[callbackName];
+
+        script.remove();
+
+    };
+
+    script.src = MEDIA_API +
+        "?callback=" + encodeURIComponent(callbackName) +
+        "&t=" + Date.now();
+
+    document.head.appendChild(script);
+
+}
+
+/* =====================================================
+   THỐNG KÊ
+===================================================== */
+
+function updateStatistics() {
+
+    let images = 0;
+    let videos = 0;
+
+    const counts = {
+        "quan-su": 0,
+        "chinh-tri": 0,
+        "hau-can": 0,
+        "ky-thuat": 0
+    };
+
+    allMedia.forEach(function(item) {
+
+        const type = String(item.fileType || "");
+
+        if (type.startsWith("image/")) images++;
+
+        if (type.startsWith("video/")) videos++;
+
+        const category = item.category;
+
+        if (counts[category] !== undefined) {
+            counts[category]++;
+        }
+
+    });
+
+    document.getElementById("totalImages").textContent = images;
+
+    document.getElementById("totalVideos").textContent = videos;
+
+    Object.keys(counts).forEach(function(category) {
+
+        document.getElementById("count-" + category).textContent =
+            counts[category];
+
+    });
+
+}
+
+/* =====================================================
+   HIỂN THỊ THƯ VIỆN
+===================================================== */
+
+function renderMedia(items) {
+
+    const list = document.getElementById("mediaList");
+
+    const search = document.getElementById("searchMedia")
+        .value.trim().toLowerCase();
+
+    let filtered = items.slice().reverse();
+
+    if (currentCategory !== "all") {
+
+        filtered = filtered.filter(function(item) {
+            return item.category === currentCategory;
+        });
+
+    }
+
+    if (search) {
+
+        filtered = filtered.filter(function(item) {
+
+            return String(item.fileName || "")
+                .toLowerCase()
+                .includes(search);
+
+        });
+
+    }
+
+    document.getElementById("libraryCount").textContent =
+        filtered.length;
+
+    if (!filtered.length) {
+
+        list.innerHTML =
+            '<div class="empty">' +
+            '📂 Chưa có tư liệu trong danh mục này.' +
+            '<br>Hãy tải hình ảnh hoặc video lên để bổ sung thư viện.' +
+            '</div>';
+
+        return;
+
+    }
+
+    list.innerHTML = filtered.map(function(item) {
+
+        const name = escapeHTML(item.fileName);
+
+        const url = escapeHTML(item.url);
+
+        const type = String(item.fileType || "");
+
+        const fileId = escapeHTML(item.fileId);
+
+        const category = item.category;
+
+        const categoryName =
+            categories[category] || "CHƯA PHÂN LOẠI";
+
+        const isImage = type.startsWith("image/");
+
+        const isVideo = type.startsWith("video/");
+
+        let preview = '<div class="media-preview">📁</div>';
+
+        if (isImage) {
+
+            preview =
+                '<div class="media-preview">' +
+                '<img src="' + url + '" alt="' + name + '" loading="lazy">' +
+                '</div>';
+
+        } else if (isVideo) {
+
+            preview =
+                '<div class="media-preview">' +
+                '<video controls preload="metadata">' +
+                '<source src="' + url + '" type="' +
+                escapeHTML(type) + '">' +
+                '</video>' +
+                '</div>';
+
+        }
+
+        return `
+
+            <article class="media-card">
+
+                ${preview}
+
+                <div class="media-info">
+
+                    <div class="media-category">
+                        ${categoryName}
+                    </div>
+
+                    <div class="media-name">
+                        ${name}
+                    </div>
+
+                    <div class="media-meta">
+                        Loại tệp: ${escapeHTML(type)}
+                        <br>
+                        Ngày đăng: ${escapeHTML(item.date)}
+                        <br>
+                        Người tải lên: ${escapeHTML(item.uploader)}
+                    </div>
+
+                    <div class="media-actions">
+
+                        <button
+                            class="view-btn"
+                            type="button"
+                            data-action="view"
+                            data-url="${url}"
+                            data-name="${name}"
+                            data-type="${escapeHTML(type)}"
+                        >
+                            👁 XEM
+                        </button>
+
+                        <a
+                            class="download-btn"
+                            href="${url}"
+                            target="_blank"
+                            rel="noopener"
+                            download
+                        >
+                            ⬇ TẢI VỀ
+                        </a>
+
+                        <button
+                            class="delete-btn"
+                            type="button"
+                            data-action="delete"
+                            data-id="${fileId}"
+                        >
+                            🗑 XÓA
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        `;
+
+    }).join("");
+
+}
+
+/* =====================================================
+   XEM ẢNH / VIDEO
+===================================================== */
+
+function viewMedia(url, name, type) {
+
+    const modal = document.getElementById("mediaModal");
+
+    const content = document.getElementById("modalMedia");
+
+    const title = document.getElementById("modalTitle");
+
+    if (type.startsWith("image/")) {
+
+        content.innerHTML =
+            '<img src="' + url + '" alt="' +
+            escapeHTML(name) + '">';
+
+    } else if (type.startsWith("video/")) {
+
+        content.innerHTML =
+            '<video controls autoplay playsinline>' +
+            '<source src="' + url + '" type="' +
+            escapeHTML(type) + '">' +
+            '</video>';
+
+    } else {
+
+        window.open(url, "_blank", "noopener");
+
+        return;
+
+    }
+
+    title.textContent = name;
+
+    modal.classList.add("show");
+
+}
+
+function closeModal(event) {
+
+    if (
+        event &&
+        event.target.id !== "mediaModal" &&
+        !event.target.classList.contains("close-modal")
+    ) {
+        return;
+    }
+
+    const modal = document.getElementById("mediaModal");
+
+    modal.classList.remove("show");
+
+    document.getElementById("modalMedia").innerHTML = "";
+
+}
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeModal();
+    }
+
+});
+
+/* =====================================================
+   XỬ LÝ NÚT XEM VÀ XÓA
+===================================================== */
+
+document.getElementById("mediaList")
+    .addEventListener("click", function(event) {
+
+        const button = event.target.closest("button[data-action]");
+
+        if (!button) return;
+
+        if (button.dataset.action === "view") {
+
+            viewMedia(
+                button.dataset.url,
+                button.dataset.name,
+                button.dataset.type
+            );
+
+        }
+
+        if (button.dataset.action === "delete") {
+
+            deleteMedia(
+                button.dataset.id,
+                button
+            );
+
+        }
+
+    });
+
+/* =====================================================
+   TẢI LÊN
+   GIỮ NGUYÊN PHƯƠNG THỨC POST GỐC
+   BỔ SUNG TRƯỜNG CATEGORY
+===================================================== */
+
+async function uploadMedia() {
+
+    const fileInput = document.getElementById("mediaFile");
+
+    const file = fileInput.files[0];
+
+    const uploader = uploaderInput.value.trim();
+
+    const category =
+        document.getElementById("categorySelect").value;
+
+    const status = document.getElementById("status");
+
+    const button = document.getElementById("uploadBtn");
+
+    if (!file) {
+
+        alert("Vui lòng chọn hình ảnh hoặc video.");
+
+        return;
+
+    }
+
+    if (!uploader) {
+
+        alert("Vui lòng nhập tên người tải lên.");
+
+        return;
+
+    }
+
+    if (file.size > 70 * 1024 * 1024) {
+
+        alert("Tệp vượt quá dung lượng cho phép 70 MB.");
+
+        return;
+
+    }
+
+    const allowedTypes = [
+
+        "image/jpeg",
+        "image/png",
+        "image/gif",
+        "image/webp",
+        "video/mp4",
+        "video/webm",
+        "video/quicktime"
+
+    ];
+
+    if (!allowedTypes.includes(file.type)) {
+
+        alert("Định dạng tệp không được hỗ trợ.");
+
+        return;
+
+    }
+
+    button.disabled = true;
+
+    status.textContent = "⏳ Đang tải tệp lên hệ thống...";
+
+    try {
+
+        const base64 = await new Promise(function(resolve, reject) {
+
+            const reader = new FileReader();
+
+            reader.onload = function() {
+
+                resolve(reader.result.split(",")[1]);
+
+            };
+
+            reader.onerror = function() {
+
+                reject(new Error("Không đọc được tệp."));
+
+            };
+
+            reader.readAsDataURL(file);
+
+        });
+
+        const params = new URLSearchParams();
+
+        params.append("fileName", file.name);
+
+        params.append("fileType", file.type);
+
+        params.append("fileData", base64);
+
+        params.append("uploader", uploader);
+
+        // TRƯỜNG DANH MỤC MỚI
+
+        params.append("category", category);
+
+                const response = await fetch(MEDIA_API, {
+            method: "POST",
+            body: params
+        });
+
+        const result = await response.json();
+
+        if (!result.success) {
+            throw new Error(result.message || "Tải tệp thất bại.");
+        }       status.textContent =
+            "Đã gửi yêu cầu tải lên. Đang cập nhật danh sách...";
+
+        fileInput.value = "";
+
+        document.getElementById("selectedFile").textContent =
+            "Chưa chọn tệp";
+
+        setTimeout(function() {
+
+            loadMedia();
+
+            status.textContent = "Đã gửi yêu cầu tải lên.";
+
+            button.disabled = false;
+
+        }, 2000);
+
+    } catch (error) {
+
+        console.error(error);
+
+        status.textContent =
+            "Không thể gửi tệp. Vui lòng kiểm tra kết nối và thử lại.";
+
+        button.disabled = false;
+
+    }
+
+}
+
+/* =====================================================
+   KHỞI ĐỘNG
+===================================================== */
+
+loadMedia();
+
+</script>
+
+</body>
+</html>
