@@ -1563,8 +1563,9 @@ function renderMedia(items) {
 
         const type = String(item.fileType || "");
 
-        const imageUrl = "https://drive.google.com/thumbnail?id=" +
-    encodeURIComponent(item.fileId) + "&sz=w1200";       const category = item.category;
+        const fileId = escapeHTML(item.fileId);
+
+        const category = item.category;
 
         const categoryName =
             categories[category] || "CHƯA PHÂN LOẠI";
@@ -1579,7 +1580,7 @@ function renderMedia(items) {
 
             preview =
                 '<div class="media-preview">' +
-                '<img src="' + imageUrl + '" alt="' + name + '" loading="lazy">' +
+                '<img src="' + url + '" alt="' + name + '" loading="lazy">' +
                 '</div>';
 
         } else if (isVideo) {
@@ -1626,7 +1627,7 @@ function renderMedia(items) {
                             data-action="view"
                             data-url="${url}"
                             data-name="${name}"
-                            data-file-id="${fileId}"
+                            data-type="${escapeHTML(type)}"
                         >
                             👁 XEM
                         </button>
@@ -1664,19 +1665,20 @@ function renderMedia(items) {
 
 /* =====================================================
    XEM ẢNH / VIDEO
-===================================================== */function viewMedia(url, name, type, fileId) {
+===================================================== */
+
+function viewMedia(url, name, type) {
 
     const modal = document.getElementById("mediaModal");
+
     const content = document.getElementById("modalMedia");
+
     const title = document.getElementById("modalTitle");
 
     if (type.startsWith("image/")) {
 
-        const imageUrl = "https://drive.google.com/thumbnail?id=" +
-            encodeURIComponent(fileId) + "&sz=w1600";
-
         content.innerHTML =
-            '<img src="' + imageUrl + '" alt="' +
+            '<img src="' + url + '" alt="' +
             escapeHTML(name) + '">';
 
     } else if (type.startsWith("video/")) {
@@ -1690,11 +1692,13 @@ function renderMedia(items) {
     } else {
 
         window.open(url, "_blank", "noopener");
+
         return;
 
     }
 
     title.textContent = name;
+
     modal.classList.add("show");
 
 }
@@ -1738,12 +1742,13 @@ document.getElementById("mediaList")
 
         if (button.dataset.action === "view") {
 
-          viewMedia(
-    button.dataset.url,
-    button.dataset.name,
-    button.dataset.type,
-    button.dataset.fileId
-);        }
+            viewMedia(
+                button.dataset.url,
+                button.dataset.name,
+                button.dataset.type
+            );
+
+        }
 
         if (button.dataset.action === "delete") {
 
